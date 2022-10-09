@@ -225,7 +225,7 @@ Homepage: http://gnu.org/software/coreutils
 Original-Maintainer: Michael Stone <mstone@debian.org>
 
 Package: curl
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: web
 Installed-Size: 442
@@ -344,7 +344,7 @@ Homepage: https://www.gnu.org/software/diffutils/
 Original-Maintainer: Santiago Vila <sanvila@debian.org>
 
 Package: dirmngr
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: utils
 Installed-Size: 676
@@ -375,7 +375,7 @@ Homepage: https://www.gnupg.org/
 Original-Maintainer: Debian GnuPG Maintainers <pkg-gnupg-maint@lists.alioth.debian.org>
 
 Package: distro-info-data
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: devel
 Installed-Size: 19
@@ -547,7 +547,7 @@ Homepage: https://git-scm.com/
 Original-Maintainer: Jonathan Nieder <jrnieder@gmail.com>
 
 Package: gnupg
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: utils
 Installed-Size: 473
@@ -572,7 +572,7 @@ Homepage: https://www.gnupg.org/
 Original-Maintainer: Debian GnuPG Maintainers <pkg-gnupg-maint@lists.alioth.debian.org>
 
 Package: gnupg-l10n
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: localization
 Installed-Size: 392
@@ -596,7 +596,7 @@ Homepage: https://www.gnupg.org/
 Original-Maintainer: Debian GnuPG Maintainers <pkg-gnupg-maint@lists.alioth.debian.org>
 
 Package: gnupg-utils
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: utils
 Installed-Size: 787
@@ -631,7 +631,7 @@ Homepage: https://www.gnupg.org/
 Original-Maintainer: Debian GnuPG Maintainers <pkg-gnupg-maint@lists.alioth.debian.org>
 
 Package: gnupg2
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: oldlibs
 Installed-Size: 51
@@ -652,7 +652,7 @@ Homepage: https://www.gnupg.org/
 Original-Maintainer: Debian GnuPG Maintainers <pkg-gnupg-maint@lists.alioth.debian.org>
 
 Package: gpg
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: utils
 Installed-Size: 1121
@@ -680,7 +680,7 @@ Homepage: https://www.gnupg.org/
 Original-Maintainer: Debian GnuPG Maintainers <pkg-gnupg-maint@lists.alioth.debian.org>
 
 Package: gpg-agent
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: utils
 Installed-Size: 595
@@ -696,8 +696,8 @@ Recommends: gnupg (= 2.2.27-3ubuntu2.1)
 Suggests: dbus-user-session, libpam-systemd, pinentry-gnome3, scdaemon
 Breaks: gnupg-agent (<< 2.1.21-4)
 Conffiles:
- /etc/X11/Xsession.d/90gpg-agent newconffile
- /etc/logcheck/ignore.d.server/gpg-agent newconffile
+ /etc/X11/Xsession.d/90gpg-agent fbb9ce5e8e4ba5727090f0aa51b61a82
+ /etc/logcheck/ignore.d.server/gpg-agent 2d0fbc91a955ba69408ca033d7ae2455
 Description: GNU privacy guard - cryptographic agent
  GnuPG is GNU's tool for secure communication and data storage.
  It can be used to encrypt data and to create digital signatures.
@@ -714,7 +714,7 @@ Homepage: https://www.gnupg.org/
 Original-Maintainer: Debian GnuPG Maintainers <pkg-gnupg-maint@lists.alioth.debian.org>
 
 Package: gpg-wks-client
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: utils
 Installed-Size: 184
@@ -743,7 +743,7 @@ Homepage: https://www.gnupg.org/
 Original-Maintainer: Debian GnuPG Maintainers <pkg-gnupg-maint@lists.alioth.debian.org>
 
 Package: gpg-wks-server
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: utils
 Installed-Size: 168
@@ -772,7 +772,7 @@ Homepage: https://www.gnupg.org/
 Original-Maintainer: Debian GnuPG Maintainers <pkg-gnupg-maint@lists.alioth.debian.org>
 
 Package: gpgconf
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: utils
 Installed-Size: 280
@@ -795,7 +795,7 @@ Homepage: https://www.gnupg.org/
 Original-Maintainer: Debian GnuPG Maintainers <pkg-gnupg-maint@lists.alioth.debian.org>
 
 Package: gpgsm
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: utils
 Installed-Size: 480
@@ -1012,7 +1012,7 @@ Description: package management runtime library
 Original-Maintainer: APT Development Team <deity@lists.debian.org>
 
 Package: libassuan0
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: libs
 Installed-Size: 110
@@ -1179,7 +1179,7 @@ Homepage: https://sourceware.org/bzip2/
 
 Package: libc-bin
 Essential: yes
-Status: install ok triggers-pending
+Status: install ok installed
 Priority: required
 Section: libs
 Installed-Size: 2537
@@ -1204,7 +1204,6 @@ Description: GNU C Library: Binaries
   * ldd, ldconfig: print/configure shared library dependencies
   * locale, localedef: show/generate locale definitions
   * tzselect, zdump, zic: select/dump/compile time zones
-Triggers-Pending: ldconfig
 Homepage: https://www.gnu.org/software/libc/libc.html
 Original-Maintainer: GNU Libc Maintainers <debian-glibc@lists.debian.org>
 Original-Vcs-Browser: https://salsa.debian.org/glibc-team/glibc
@@ -1384,7 +1383,7 @@ Homepage: https://curl.haxx.se
 Original-Maintainer: Alessandro Ghedini <ghedo@debian.org>
 
 Package: libcurl4
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: libs
 Installed-Size: 782
@@ -1927,7 +1926,7 @@ Original-Maintainer: Sam Hartman <hartmans@debian.org>
 Homepage: http://web.mit.edu/kerberos/
 
 Package: libksba8
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: libs
 Installed-Size: 302
@@ -2070,7 +2069,7 @@ Homepage: https://www.kernel.org/pub/linux/utils/util-linux/
 Original-Maintainer: util-linux packagers <util-linux@packages.debian.org>
 
 Package: libmpdec3
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: libs
 Installed-Size: 250
@@ -2181,7 +2180,7 @@ Homepage: https://nghttp2.org/
 Original-Maintainer: Tomasz Buchert <tomasz@debian.org>
 
 Package: libnpth0
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: libs
 Installed-Size: 40
@@ -2453,7 +2452,7 @@ Homepage: https://github.com/rockdaboot/libpsl
 Original-Maintainer: Tim Rühsen <tim.ruehsen@gmx.de>
 
 Package: libpython3-stdlib
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: python
 Installed-Size: 39
@@ -2493,7 +2492,7 @@ Description: Minimal subset of the Python language (version 3.10)
 Original-Maintainer: Matthias Klose <doko@debian.org>
 
 Package: libpython3.10-stdlib
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: python
 Installed-Size: 8041
@@ -2515,7 +2514,7 @@ Description: Interactive high-level object-oriented language (standard library, 
 Original-Maintainer: Matthias Klose <doko@debian.org>
 
 Package: libreadline8
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: libs
 Installed-Size: 461
@@ -2787,7 +2786,7 @@ Homepage: https://www.kernel.org/pub/linux/utils/util-linux/
 Original-Maintainer: util-linux packagers <util-linux@packages.debian.org>
 
 Package: libsqlite3-0
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: libs
 Installed-Size: 1602
@@ -3353,7 +3352,7 @@ Homepage: https://wiki.linuxfoundation.org/lsb/start
 Original-Maintainer: Debian sysvinit maintainers <debian-init-diversity@chiark.greenend.org.uk>
 
 Package: lsb-release
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: misc
 Installed-Size: 66
@@ -3408,7 +3407,7 @@ Original-Maintainer: Boyuan Yang <byang@debian.org>
 Homepage: https://invisible-island.net/mawk/
 
 Package: media-types
-Status: install ok unpacked
+Status: install ok installed
 Priority: standard
 Section: net
 Installed-Size: 97
@@ -3419,7 +3418,7 @@ Version: 7.0.0
 Replaces: mime-support (<< 3.65)
 Breaks: mime-support (<< 3.65)
 Conffiles:
- /etc/mime.types newconffile
+ /etc/mime.types 2e5f0c27e65400ea230c8a94be277b86
 Description: List of standard media types and their usual file extension
  This package installs the configuration file /etc/mime.types, that lists
  standard media types (originally known as "MIME" types) and their usual file
@@ -3520,6 +3519,35 @@ Description: Basic TCP/IP networking system
  In particular, it supplies common name-to-number mappings in /etc/services,
  /etc/rpc, /etc/protocols and /etc/ethertypes.
 Original-Maintainer: Marco d'Itri <md@linux.it>
+
+Package: nginx
+Status: install ok unpacked
+Priority: optional
+Section: httpd
+Installed-Size: 3179
+Maintainer: NGINX Packaging <nginx-packaging@f5.com>
+Architecture: amd64
+Version: 1.22.0-1~jammy
+Replaces: nginx-common, nginx-core
+Provides: httpd, nginx, nginx-r1.22.0
+Depends: libc6 (>= 2.34), libcrypt1 (>= 1:4.1.0), libpcre2-8-0 (>= 10.22), libssl3 (>= 3.0.0~~alpha1), zlib1g (>= 1:1.1.4), lsb-base (>= 3.0-6), adduser
+Conflicts: nginx-common, nginx-core
+Conffiles:
+ /etc/default/nginx newconffile
+ /etc/default/nginx-debug newconffile
+ /etc/init.d/nginx newconffile
+ /etc/init.d/nginx-debug newconffile
+ /etc/logrotate.d/nginx newconffile
+ /etc/nginx/conf.d/default.conf newconffile
+ /etc/nginx/fastcgi_params newconffile
+ /etc/nginx/mime.types newconffile
+ /etc/nginx/nginx.conf newconffile
+ /etc/nginx/scgi_params newconffile
+ /etc/nginx/uwsgi_params newconffile
+Description: high performance web server
+ nginx [engine x] is an HTTP and reverse proxy server, as well as
+ a mail proxy server.
+Homepage: https://nginx.org
 
 Package: openssh-client
 Status: install ok installed
@@ -3729,7 +3757,7 @@ Homepage: http://dev.perl.org/perl5/
 Original-Maintainer: Niko Tyni <ntyni@debian.org>
 
 Package: pinentry-curses
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: utils
 Installed-Size: 92
@@ -3817,7 +3845,7 @@ Original-Maintainer: Daniel Kahn Gillmor <dkg@fifthhorseman.net>
 Homepage: https://publicsuffix.org
 
 Package: python3
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: python
 Installed-Size: 90
@@ -3863,7 +3891,7 @@ Homepage: https://www.python.org/
 Cnf-Visible-Pkgname: python3
 
 Package: python3.10
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: python
 Installed-Size: 620
@@ -3904,7 +3932,7 @@ Original-Maintainer: Matthias Klose <doko@debian.org>
 Cnf-Visible-Pkgname: python3.10
 
 Package: readline-common
-Status: install ok unpacked
+Status: install ok installed
 Priority: optional
 Section: utils
 Installed-Size: 80

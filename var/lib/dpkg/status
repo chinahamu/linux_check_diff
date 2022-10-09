@@ -3520,6 +3520,35 @@ Description: Basic TCP/IP networking system
  /etc/rpc, /etc/protocols and /etc/ethertypes.
 Original-Maintainer: Marco d'Itri <md@linux.it>
 
+Package: nginx
+Status: install ok installed
+Priority: optional
+Section: httpd
+Installed-Size: 3179
+Maintainer: NGINX Packaging <nginx-packaging@f5.com>
+Architecture: amd64
+Version: 1.22.0-1~jammy
+Replaces: nginx-common, nginx-core
+Provides: httpd, nginx, nginx-r1.22.0
+Depends: libc6 (>= 2.34), libcrypt1 (>= 1:4.1.0), libpcre2-8-0 (>= 10.22), libssl3 (>= 3.0.0~~alpha1), zlib1g (>= 1:1.1.4), lsb-base (>= 3.0-6), adduser
+Conflicts: nginx-common, nginx-core
+Conffiles:
+ /etc/default/nginx e2b1ae0f31c6d03d3305ef526b0ba3b5
+ /etc/default/nginx-debug 719f6f9981039a05a64c201a4b1db19f
+ /etc/init.d/nginx 7224be660d7c280a775bd6eca2547df4
+ /etc/init.d/nginx-debug 57e8f64b4f464fc13701c6b22240ac10
+ /etc/logrotate.d/nginx a4da44b03e39926b999329061770362b
+ /etc/nginx/conf.d/default.conf 25c02145e4a2e1d2bc6da5d585cddd32
+ /etc/nginx/fastcgi_params 4729c30112ca3071f4650479707993ad
+ /etc/nginx/mime.types 754582375e90b09edaa6d3dbd657b3cf
+ /etc/nginx/nginx.conf 756e7eaae19e95b5f49ce81e73b10512
+ /etc/nginx/scgi_params df8c71e25e0356ffc539742f08fddfff
+ /etc/nginx/uwsgi_params 88ac833ee8ea60904a8b3063fde791de
+Description: high performance web server
+ nginx [engine x] is an HTTP and reverse proxy server, as well as
+ a mail proxy server.
+Homepage: https://nginx.org
+
 Package: openssh-client
 Status: install ok installed
 Priority: standard

@@ -523,3 +523,8 @@ Start-Date: 2022-10-09  10:25:11
 Commandline: apt install curl gnupg2 ca-certificates lsb-release ubuntu-keyring
 Install: lsb-release:amd64 (11.1.0ubuntu4), libcurl4:amd64 (7.81.0-1ubuntu1.4, automatic), python3.10:amd64 (3.10.6-1~22.04, automatic), readline-common:amd64 (8.1.2-1, automatic), gpg:amd64 (2.2.27-3ubuntu2.1, automatic), python3-minimal:amd64 (3.10.6-1~22.04, automatic), libmpdec3:amd64 (2.5.1-2build2, automatic), libpython3.10-minimal:amd64 (3.10.6-1~22.04, automatic), libpython3.10-stdlib:amd64 (3.10.6-1~22.04, automatic), gnupg2:amd64 (2.2.27-3ubuntu2.1), python3:amd64 (3.10.6-1~22.04, automatic), gnupg:amd64 (2.2.27-3ubuntu2.1, automatic), gpg-wks-server:amd64 (2.2.27-3ubuntu2.1, automatic), gpg-agent:amd64 (2.2.27-3ubuntu2.1, automatic), libreadline8:amd64 (8.1.2-1, automatic), libassuan0:amd64 (2.5.5-1build1, automatic), libnpth0:amd64 (1.6-3build2, automatic), media-types:amd64 (7.0.0, automatic), libsqlite3-0:amd64 (3.37.2-2, automatic), pinentry-curses:amd64 (1.1.1-1build2, automatic), gpgsm:amd64 (2.2.27-3ubuntu2.1, automatic), distro-info-data:amd64 (0.52ubuntu0.1, automatic), libpython3-stdlib:amd64 (3.10.6-1~22.04, automatic), dirmngr:amd64 (2.2.27-3ubuntu2.1, automatic), libksba8:amd64 (1.6.0-2build1, automatic), gnupg-utils:amd64 (2.2.27-3ubuntu2.1, automatic), curl:amd64 (7.81.0-1ubuntu1.4), gnupg-l10n:amd64 (2.2.27-3ubuntu2.1, automatic), python3.10-minimal:amd64 (3.10.6-1~22.04, automatic), gpg-wks-client:amd64 (2.2.27-3ubuntu2.1, automatic), gpgconf:amd64 (2.2.27-3ubuntu2.1, automatic)
 End-Date: 2022-10-09  10:25:18
+
+Start-Date: 2022-10-09  10:51:42
+Commandline: apt install nginx
+Install: nginx:amd64 (1.22.0-1~jammy)
+End-Date: 2022-10-09  10:51:42

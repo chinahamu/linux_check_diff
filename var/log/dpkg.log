@@ -3051,3 +3051,12 @@
 2022-10-09 10:25:18 trigproc libc-bin:amd64 2.35-0ubuntu3.1 <none>
 2022-10-09 10:25:18 status half-configured libc-bin:amd64 2.35-0ubuntu3.1
 2022-10-09 10:25:18 status installed libc-bin:amd64 2.35-0ubuntu3.1
+2022-10-09 10:51:42 startup archives unpack
+2022-10-09 10:51:42 install nginx:amd64 <none> 1.22.0-1~jammy
+2022-10-09 10:51:42 status half-installed nginx:amd64 1.22.0-1~jammy
+2022-10-09 10:51:42 status unpacked nginx:amd64 1.22.0-1~jammy
+2022-10-09 10:51:42 startup packages configure
+2022-10-09 10:51:42 configure nginx:amd64 1.22.0-1~jammy <none>
+2022-10-09 10:51:42 status unpacked nginx:amd64 1.22.0-1~jammy
+2022-10-09 10:51:42 status half-configured nginx:amd64 1.22.0-1~jammy
+2022-10-09 10:51:42 status installed nginx:amd64 1.22.0-1~jammy

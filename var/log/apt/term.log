@@ -356,3 +356,28 @@ Setting up gnupg (2.2.27-3ubuntu2.1) ...
 Setting up gnupg2 (2.2.27-3ubuntu2.1) ...
 Processing triggers for libc-bin (2.35-0ubuntu3.1) ...
 Log ended: 2022-10-09  10:25:18
+
+Log started: 2022-10-09  10:51:42
+Selecting previously unselected package nginx.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9347 files and directories currently installed.)
+Preparing to unpack .../nginx_1.22.0-1~jammy_amd64.deb ...
+----------------------------------------------------------------------
+
+Thanks for using nginx!
+
+Please find the official documentation for nginx here:
+* https://nginx.org/en/docs/
+
+Please subscribe to nginx-announce mailing list to get
+the most important news about nginx:
+* https://nginx.org/en/support.html
+
+Commercial subscriptions for nginx are available on:
+* https://nginx.com/products/
+
+----------------------------------------------------------------------
+Unpacking nginx (1.22.0-1~jammy) ...
+Setting up nginx (1.22.0-1~jammy) ...
+invoke-rc.d: could not determine current runlevel
+invoke-rc.d: policy-rc.d denied execution of start.
+Log ended: 2022-10-09  10:51:42

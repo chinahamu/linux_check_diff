@@ -38,3 +38,4 @@ games:x:60:
 users:x:100:
 nogroup:x:65534:
 _ssh:x:101:
+nginx:x:102:
