@@ -224,6 +224,28 @@ Description: GNU core utilities
 Homepage: http://gnu.org/software/coreutils
 Original-Maintainer: Michael Stone <mstone@debian.org>
 
+Package: curl
+Status: install ok installed
+Priority: optional
+Section: web
+Installed-Size: 442
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: foreign
+Version: 7.81.0-1ubuntu1.4
+Depends: libc6 (>= 2.34), libcurl4 (= 7.81.0-1ubuntu1.4), zlib1g (>= 1:1.1.4)
+Description: command line tool for transferring data with URL syntax
+ curl is a command line tool for transferring data with URL syntax, supporting
+ DICT, FILE, FTP, FTPS, GOPHER, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3,
+ POP3S, RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, TELNET and TFTP.
+ .
+ curl supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP form
+ based upload, proxies, cookies, user+password authentication (Basic, Digest,
+ NTLM, Negotiate, kerberos...), file transfer resume, proxy tunneling and a
+ busload of other useful tricks.
+Homepage: https://curl.haxx.se
+Original-Maintainer: Alessandro Ghedini <ghedo@debian.org>
+
 Package: dash
 Essential: yes
 Status: install ok installed
@@ -320,6 +342,56 @@ Description: File comparison utilities
  update, or "patch", a copy of the file.
 Homepage: https://www.gnu.org/software/diffutils/
 Original-Maintainer: Santiago Vila <sanvila@debian.org>
+
+Package: dirmngr
+Status: install ok installed
+Priority: optional
+Section: utils
+Installed-Size: 676
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: foreign
+Source: gnupg2
+Version: 2.2.27-3ubuntu2.1
+Replaces: gnupg2 (<< 2.1.10-2)
+Depends: adduser, gpgconf (= 2.2.27-3ubuntu2.1), lsb-base (>= 3.2-13), init-system-helpers (>= 1.52), libassuan0 (>= 2.5.0), libc6 (>= 2.34), libgcrypt20 (>= 1.9.0), libgnutls30 (>= 3.7.2), libgpg-error0 (>= 1.42), libksba8 (>= 1.3.5), libldap-2.5-0 (>= 2.5.4), libnpth0 (>= 0.90)
+Recommends: gnupg (= 2.2.27-3ubuntu2.1)
+Suggests: dbus-user-session, libpam-systemd, pinentry-gnome3, tor
+Breaks: gnupg2 (<< 2.1.10-2)
+Enhances: gpg, gpgsm, squid
+Description: GNU privacy guard - network certificate management service
+ dirmngr is a server for managing and downloading OpenPGP and X.509
+ certificates, as well as updates and status signals related to those
+ certificates.  For OpenPGP, this means pulling from the public
+ HKP/HKPS keyservers, or from LDAP servers.  For X.509 this includes
+ Certificate Revocation Lists (CRLs) and Online Certificate Status
+ Protocol updates (OCSP).  It is capable of using Tor for network
+ access.
+ .
+ dirmngr is used for network access by gpg, gpgsm, and dirmngr-client,
+ among other tools.  Unless this package is installed, the parts of
+ the GnuPG suite that try to interact with the network will fail.
+Homepage: https://www.gnupg.org/
+Original-Maintainer: Debian GnuPG Maintainers <pkg-gnupg-maint@lists.alioth.debian.org>
+
+Package: distro-info-data
+Status: install ok installed
+Priority: optional
+Section: devel
+Installed-Size: 19
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: all
+Multi-Arch: foreign
+Version: 0.52ubuntu0.1
+Breaks: distro-info (<< 1.0~)
+Description: information about the distributions' releases (data files)
+ Information about all releases of Debian and Ubuntu. The distro-info script
+ will give you the codename for e.g. the latest stable release of your
+ distribution. To get information about a specific distribution there are the
+ debian-distro-info and the ubuntu-distro-info scripts.
+ .
+ This package contains the data files.
+Original-Maintainer: Benjamin Drung <bdrung@debian.org>
 
 Package: dpkg
 Essential: yes
@@ -473,6 +545,280 @@ Description: fast, scalable, distributed revision control system (manual pages)
  utility and the 'git help' command.
 Homepage: https://git-scm.com/
 Original-Maintainer: Jonathan Nieder <jrnieder@gmail.com>
+
+Package: gnupg
+Status: install ok installed
+Priority: optional
+Section: utils
+Installed-Size: 473
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: all
+Multi-Arch: foreign
+Source: gnupg2
+Version: 2.2.27-3ubuntu2.1
+Replaces: gnupg2 (<< 2.1.11-7+exp1)
+Depends: dirmngr (<< 2.2.27-3ubuntu2.1.1~), dirmngr (>= 2.2.27-3ubuntu2.1), gnupg-l10n (= 2.2.27-3ubuntu2.1), gnupg-utils (<< 2.2.27-3ubuntu2.1.1~), gnupg-utils (>= 2.2.27-3ubuntu2.1), gpg (<< 2.2.27-3ubuntu2.1.1~), gpg (>= 2.2.27-3ubuntu2.1), gpg-agent (<< 2.2.27-3ubuntu2.1.1~), gpg-agent (>= 2.2.27-3ubuntu2.1), gpg-wks-client (<< 2.2.27-3ubuntu2.1.1~), gpg-wks-client (>= 2.2.27-3ubuntu2.1), gpg-wks-server (<< 2.2.27-3ubuntu2.1.1~), gpg-wks-server (>= 2.2.27-3ubuntu2.1), gpgsm (<< 2.2.27-3ubuntu2.1.1~), gpgsm (>= 2.2.27-3ubuntu2.1), gpgv (<< 2.2.27-3ubuntu2.1.1~), gpgv (>= 2.2.27-3ubuntu2.1)
+Suggests: parcimonie, xloadimage
+Breaks: debsig-verify (<< 0.15), dirmngr (<< 2.2.27-3ubuntu2.1), gnupg2 (<< 2.1.11-7+exp1), libgnupg-interface-perl (<< 0.52-3), libgnupg-perl (<= 0.19-1), libmail-gnupg-perl (<= 0.22-1), monkeysphere (<< 0.38~), php-crypt-gpg (<= 1.4.1-1), python-apt (<= 1.1.0~beta4), python-gnupg (<< 0.3.8-3), python3-apt (<= 1.1.0~beta4)
+Description: GNU privacy guard - a free PGP replacement
+ GnuPG is GNU's tool for secure communication and data storage.
+ It can be used to encrypt data and to create digital signatures.
+ It includes an advanced key management facility and is compliant
+ with the proposed OpenPGP Internet standard as described in RFC4880.
+ .
+ This package contains the full suite of GnuPG tools for cryptographic
+ communications and data storage.
+Homepage: https://www.gnupg.org/
+Original-Maintainer: Debian GnuPG Maintainers <pkg-gnupg-maint@lists.alioth.debian.org>
+
+Package: gnupg-l10n
+Status: install ok installed
+Priority: optional
+Section: localization
+Installed-Size: 392
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: all
+Multi-Arch: foreign
+Source: gnupg2
+Version: 2.2.27-3ubuntu2.1
+Replaces: gnupg (<< 2.1.14-2~), gnupg2 (<< 2.1.14-2~)
+Breaks: gnupg (<< 2.1.14-2~), gnupg2 (<< 2.1.14-2~)
+Enhances: dirmngr, gpg, gpg-agent
+Description: GNU privacy guard - localization files
+ GnuPG is GNU's tool for secure communication and data storage.
+ It can be used to encrypt data and to create digital signatures.
+ It includes an advanced key management facility and is compliant
+ with the proposed OpenPGP Internet standard as described in RFC 4880.
+ .
+ This package contains the translation files for the use of GnuPG in
+ non-English locales.
+Homepage: https://www.gnupg.org/
+Original-Maintainer: Debian GnuPG Maintainers <pkg-gnupg-maint@lists.alioth.debian.org>
+
+Package: gnupg-utils
+Status: install ok installed
+Priority: optional
+Section: utils
+Installed-Size: 787
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: foreign
+Source: gnupg2
+Version: 2.2.27-3ubuntu2.1
+Replaces: gnupg (<< 2.1.21-4), gnupg-agent (<< 2.1.21-4)
+Depends: libassuan0 (>= 2.5.0), libbz2-1.0, libc6 (>= 2.34), libgcrypt20 (>= 1.9.0), libgpg-error0 (>= 1.42), libksba8 (>= 1.3.5), libreadline8 (>= 6.0), zlib1g (>= 1:1.1.4)
+Recommends: gpg, gpg-agent, gpgconf, gpgsm
+Breaks: gnupg (<< 2.1.21-4), gnupg-agent (<< 2.1.21-4)
+Description: GNU privacy guard - utility programs
+ GnuPG is GNU's tool for secure communication and data storage.
+ .
+ This package contains several useful utilities for manipulating
+ OpenPGP data and other related cryptographic elements.  It includes:
+ .
+  * addgnupghome -- create .gnupg home directories
+  * applygnupgdefaults -- run gpgconf --apply-defaults for all users
+  * gpgcompose -- an experimental tool for constructing arbitrary
+                  sequences of OpenPGP packets (e.g. for testing)
+  * gpgparsemail -- parse an e-mail message into annotated format
+  * gpgsplit -- split a sequence of OpenPGP packets into files
+  * gpgtar -- encrypt or sign files in an archive
+  * kbxutil -- list, export, import Keybox data
+  * lspgpot -- convert PGP ownertrust values to GnuPG
+  * migrate-pubring-from-classic-gpg -- use only "modern" formats
+  * symcryptrun -- use simple symmetric encryption tool in GnuPG framework
+  * watchgnupg -- watch socket-based logs
+Homepage: https://www.gnupg.org/
+Original-Maintainer: Debian GnuPG Maintainers <pkg-gnupg-maint@lists.alioth.debian.org>
+
+Package: gnupg2
+Status: install ok installed
+Priority: optional
+Section: oldlibs
+Installed-Size: 51
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: all
+Multi-Arch: foreign
+Version: 2.2.27-3ubuntu2.1
+Depends: gnupg (>= 2.2.27-3ubuntu2.1)
+Description: GNU privacy guard - a free PGP replacement (dummy transitional package)
+ GnuPG is GNU's tool for secure communication and data storage.
+ It can be used to encrypt data and to create digital signatures.
+ It includes an advanced key management facility and is compliant
+ with the proposed OpenPGP Internet standard as described in RFC4880.
+ .
+ This is a dummy transitional package that provides symlinks from gpg2
+ to gpg.
+Homepage: https://www.gnupg.org/
+Original-Maintainer: Debian GnuPG Maintainers <pkg-gnupg-maint@lists.alioth.debian.org>
+
+Package: gpg
+Status: install ok installed
+Priority: optional
+Section: utils
+Installed-Size: 1121
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: foreign
+Source: gnupg2
+Version: 2.2.27-3ubuntu2.1
+Replaces: gnupg (<< 2.1.21-4)
+Depends: gpgconf (= 2.2.27-3ubuntu2.1), libassuan0 (>= 2.5.0), libbz2-1.0, libc6 (>= 2.34), libgcrypt20 (>= 1.9.0), libgpg-error0 (>= 1.42), libreadline8 (>= 6.0), libsqlite3-0 (>= 3.7.15), zlib1g (>= 1:1.1.4)
+Recommends: gnupg (= 2.2.27-3ubuntu2.1)
+Breaks: gnupg (<< 2.1.21-4)
+Description: GNU Privacy Guard -- minimalist public key operations
+ GnuPG is GNU's tool for secure communication and data storage.
+ It can be used to encrypt data and to create digital signatures.
+ It includes an advanced key management facility and is compliant
+ with the proposed OpenPGP Internet standard as described in RFC4880.
+ .
+ This package contains /usr/bin/gpg itself, and is useful on its own
+ only for public key operations (encryption, signature verification,
+ listing OpenPGP certificates, etc).  If you want full capabilities
+ (including secret key operations, network access, etc), please
+ install the "gnupg" package, which pulls in the full suite of tools.
+Homepage: https://www.gnupg.org/
+Original-Maintainer: Debian GnuPG Maintainers <pkg-gnupg-maint@lists.alioth.debian.org>
+
+Package: gpg-agent
+Status: install ok installed
+Priority: optional
+Section: utils
+Installed-Size: 595
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: foreign
+Source: gnupg2
+Version: 2.2.27-3ubuntu2.1
+Replaces: gnupg-agent (<< 2.1.21-4)
+Provides: gnupg-agent
+Depends: gpgconf (= 2.2.27-3ubuntu2.1), pinentry-curses | pinentry, init-system-helpers (>= 1.52), libassuan0 (>= 2.5.1), libc6 (>= 2.34), libgcrypt20 (>= 1.9.0), libgpg-error0 (>= 1.42), libnpth0 (>= 0.90)
+Recommends: gnupg (= 2.2.27-3ubuntu2.1)
+Suggests: dbus-user-session, libpam-systemd, pinentry-gnome3, scdaemon
+Breaks: gnupg-agent (<< 2.1.21-4)
+Conffiles:
+ /etc/X11/Xsession.d/90gpg-agent fbb9ce5e8e4ba5727090f0aa51b61a82
+ /etc/logcheck/ignore.d.server/gpg-agent 2d0fbc91a955ba69408ca033d7ae2455
+Description: GNU privacy guard - cryptographic agent
+ GnuPG is GNU's tool for secure communication and data storage.
+ It can be used to encrypt data and to create digital signatures.
+ It includes an advanced key management facility and is compliant
+ with the proposed OpenPGP Internet standard as described in RFC4880.
+ .
+ This package contains the agent program gpg-agent which handles all
+ secret key material for OpenPGP and S/MIME use.  The agent also
+ provides a passphrase cache, which is used by pre-2.1 versions of
+ GnuPG for OpenPGP operations.  Without this package, trying to do
+ secret-key operations with any part of the modern GnuPG suite will
+ fail.
+Homepage: https://www.gnupg.org/
+Original-Maintainer: Debian GnuPG Maintainers <pkg-gnupg-maint@lists.alioth.debian.org>
+
+Package: gpg-wks-client
+Status: install ok installed
+Priority: optional
+Section: utils
+Installed-Size: 184
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: foreign
+Source: gnupg2
+Version: 2.2.27-3ubuntu2.1
+Depends: dirmngr (= 2.2.27-3ubuntu2.1), gpg (= 2.2.27-3ubuntu2.1), gpg-agent (= 2.2.27-3ubuntu2.1), libassuan0 (>= 2.5.0), libc6 (>= 2.34), libgcrypt20 (>= 1.9.0), libgpg-error0 (>= 1.42)
+Recommends: gnupg (= 2.2.27-3ubuntu2.1)
+Description: GNU privacy guard - Web Key Service client
+ GnuPG is GNU's tool for secure communication and data storage.
+ It can be used to encrypt data and to create digital signatures.
+ It includes an advanced key management facility and is compliant
+ with the proposed OpenPGP Internet standard as described in RFC4880.
+ .
+ This package provides the GnuPG client for the Web Key Service
+ protocol.
+ .
+ A Web Key Service is a service that allows users to upload keys per
+ mail to be verified over https as described in
+ https://tools.ietf.org/html/draft-koch-openpgp-webkey-service
+ .
+ For more information see: https://wiki.gnupg.org/WKS
+Homepage: https://www.gnupg.org/
+Original-Maintainer: Debian GnuPG Maintainers <pkg-gnupg-maint@lists.alioth.debian.org>
+
+Package: gpg-wks-server
+Status: install ok installed
+Priority: optional
+Section: utils
+Installed-Size: 168
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: foreign
+Source: gnupg2
+Version: 2.2.27-3ubuntu2.1
+Depends: gpg (= 2.2.27-3ubuntu2.1), gpg-agent (= 2.2.27-3ubuntu2.1), libc6 (>= 2.34), libgcrypt20 (>= 1.9.0), libgpg-error0 (>= 1.42)
+Recommends: gnupg (= 2.2.27-3ubuntu2.1)
+Description: GNU privacy guard - Web Key Service server
+ GnuPG is GNU's tool for secure communication and data storage.
+ It can be used to encrypt data and to create digital signatures.
+ It includes an advanced key management facility and is compliant
+ with the proposed OpenPGP Internet standard as described in RFC4880.
+ .
+ This package provides the GnuPG server for the Web Key Service
+ protocol.
+ .
+ A Web Key Service is a service that allows users to upload keys per
+ mail to be verified over https as described in
+ https://tools.ietf.org/html/draft-koch-openpgp-webkey-service
+ .
+ For more information see: https://wiki.gnupg.org/WKS
+Homepage: https://www.gnupg.org/
+Original-Maintainer: Debian GnuPG Maintainers <pkg-gnupg-maint@lists.alioth.debian.org>
+
+Package: gpgconf
+Status: install ok installed
+Priority: optional
+Section: utils
+Installed-Size: 280
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: foreign
+Source: gnupg2
+Version: 2.2.27-3ubuntu2.1
+Replaces: gnupg (<< 2.1.21-4), gnupg-agent (<< 2.1.21-4)
+Depends: libassuan0 (>= 2.5.0), libc6 (>= 2.34), libgcrypt20 (>= 1.9.0), libgpg-error0 (>= 1.42), libreadline8 (>= 6.0)
+Breaks: gnupg (<< 2.1.21-4), gnupg-agent (<< 2.1.21-4)
+Description: GNU privacy guard - core configuration utilities
+ GnuPG is GNU's tool for secure communication and data storage.
+ .
+ This package contains core utilities used by different tools in the
+ suite offered by GnuPG.  It can be used to programmatically edit
+ config files for tools in the GnuPG suite, to launch or terminate
+ per-user daemons (if installed), etc.
+Homepage: https://www.gnupg.org/
+Original-Maintainer: Debian GnuPG Maintainers <pkg-gnupg-maint@lists.alioth.debian.org>
+
+Package: gpgsm
+Status: install ok installed
+Priority: optional
+Section: utils
+Installed-Size: 480
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: foreign
+Source: gnupg2
+Version: 2.2.27-3ubuntu2.1
+Replaces: gnupg2 (<< 2.1.10-2)
+Depends: gpgconf (= 2.2.27-3ubuntu2.1), libassuan0 (>= 2.5.0), libc6 (>= 2.34), libgcrypt20 (>= 1.9.0), libgpg-error0 (>= 1.42), libksba8 (>= 1.6.0), libreadline8 (>= 6.0)
+Recommends: gnupg (= 2.2.27-3ubuntu2.1)
+Breaks: gnupg2 (<< 2.1.10-2)
+Description: GNU privacy guard - S/MIME version
+ GnuPG is GNU's tool for secure communication and data storage.
+ It can be used to encrypt data and to create digital signatures.
+ It includes an advanced key management facility and is compliant
+ with the proposed OpenPGP Internet standard as described in RFC4880.
+ .
+ This package contains the gpgsm program. gpgsm is a tool to provide
+ digital encryption and signing services on X.509 certificates and the
+ CMS protocol. gpgsm includes complete certificate management.
+Homepage: https://www.gnupg.org/
+Original-Maintainer: Debian GnuPG Maintainers <pkg-gnupg-maint@lists.alioth.debian.org>
 
 Package: gpgv
 Status: install ok installed
@@ -664,6 +1010,24 @@ Description: package management runtime library
     http(s), rsh as well as an interface to add more transports like
     tor+http(s) (apt-transport-tor).
 Original-Maintainer: APT Development Team <deity@lists.debian.org>
+
+Package: libassuan0
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 110
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libassuan
+Version: 2.5.5-1build1
+Depends: libc6 (>= 2.33), libgpg-error0 (>= 1.33)
+Description: IPC library for the GnuPG components
+ Libassuan is a small library implementing the so-called "Assuan
+ protocol". This protocol is used for IPC between most newer GnuPG
+ components. Both server and client side functions are provided.
+Homepage: https://www.gnupg.org/related_software/libassuan/index.html
+Original-Maintainer: Debian GnuPG-Maintainers <pkg-gnupg-maint@lists.alioth.debian.org>
 
 Package: libattr1
 Status: install ok installed
@@ -1015,6 +1379,38 @@ Description: easy-to-use client-side URL transfer library (GnuTLS flavour)
  successful companies and numerous applications.
  .
  SSL support is provided by GnuTLS.
+Homepage: https://curl.haxx.se
+Original-Maintainer: Alessandro Ghedini <ghedo@debian.org>
+
+Package: libcurl4
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 782
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: curl
+Version: 7.81.0-1ubuntu1.4
+Replaces: libcurl3
+Depends: libbrotli1 (>= 0.6.0), libc6 (>= 2.34), libgssapi-krb5-2 (>= 1.17), libidn2-0 (>= 0.6), libldap-2.5-0 (>= 2.5.4), libnghttp2-14 (>= 1.12.0), libpsl5 (>= 0.16.0), librtmp1 (>= 2.4+20131018.git79459a2-3~), libssh-4 (>= 0.9.0), libssl3 (>= 3.0.0~~alpha1), libzstd1 (>= 1.4.0), zlib1g (>= 1:1.1.4)
+Recommends: ca-certificates
+Conflicts: libcurl3
+Description: easy-to-use client-side URL transfer library (OpenSSL flavour)
+ libcurl is an easy-to-use client-side URL transfer library, supporting DICT,
+ FILE, FTP, FTPS, GOPHER, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3, POP3S,
+ RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, TELNET and TFTP.
+ .
+ libcurl supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP
+ form based upload, proxies, cookies, user+password authentication (Basic,
+ Digest, NTLM, Negotiate, Kerberos), file transfer resume, http proxy tunneling
+ and more!
+ .
+ libcurl is free, thread-safe, IPv6 compatible, feature rich, well supported,
+ fast, thoroughly documented and is already used by many known, big and
+ successful companies and numerous applications.
+ .
+ SSL support is provided by OpenSSL.
 Homepage: https://curl.haxx.se
 Original-Maintainer: Alessandro Ghedini <ghedo@debian.org>
 
@@ -1529,6 +1925,29 @@ Description: MIT Kerberos runtime libraries - Support library
 Original-Maintainer: Sam Hartman <hartmans@debian.org>
 Homepage: http://web.mit.edu/kerberos/
 
+Package: libksba8
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 302
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libksba
+Version: 1.6.0-2build1
+Depends: libc6 (>= 2.14), libgpg-error0 (>= 1.14)
+Description: X.509 and CMS support library
+ KSBA (pronounced Kasbah) is a library to make X.509 certificates as
+ well as the CMS easily accessible by other applications.  Both
+ specifications are building blocks of S/MIME and TLS.
+ .
+ KSBA provides these subsystems: ASN.1 Parser, BER Decoder, BER
+ Encoder, Certificate Handling and CMS Handling.
+ .
+ This package contains the runtime library files.
+Homepage: https://www.gnupg.org/related_software/libksba/
+Original-Maintainer: Debian GnuTLS Maintainers <pkg-gnutls-maint@lists.alioth.debian.org>
+
 Package: libldap-2.5-0
 Status: install ok installed
 Priority: optional
@@ -1649,6 +2068,24 @@ Description: device mounting library
 Homepage: https://www.kernel.org/pub/linux/utils/util-linux/
 Original-Maintainer: util-linux packagers <util-linux@packages.debian.org>
 
+Package: libmpdec3
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 250
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: mpdecimal
+Version: 2.5.1-2build2
+Depends: libc6 (>= 2.32), libgcc-s1 (>= 3.3.1), libstdc++6 (>= 5.2)
+Breaks: libpython3.8-stdlib (<< 2.8.5-2)
+Description: library for decimal floating point arithmetic (runtime library)
+ mpdecimal is a package for correctly-rounded arbitrary precision decimal
+ floating point arithmetic.
+Homepage: https://www.bytereef.org/mpdecimal/index.html
+Original-Maintainer: Matthias Klose <doko@debian.org>
+
 Package: libncurses6
 Status: install ok installed
 Priority: optional
@@ -1741,6 +2178,27 @@ Description: library implementing HTTP/2 protocol (shared library)
  This package installs a shared library.
 Homepage: https://nghttp2.org/
 Original-Maintainer: Tomasz Buchert <tomasz@debian.org>
+
+Package: libnpth0
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 40
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: npth
+Version: 1.6-3build2
+Depends: libc6 (>= 2.34)
+Description: replacement for GNU Pth using system threads
+ nPth is a non-preemptive threads implementation using an API very
+ similar to the one known from GNU Pth. It has been designed as a
+ replacement of GNU Pth for non-ancient operating systems. In
+ contrast to GNU Pth it is based on the system's standard threads
+ implementation. Thus nPth allows the use of libraries which are not
+ compatible to GNU Pth.
+Homepage: https://www.gnupg.org/
+Original-Maintainer: Eric Dorland <eric@debian.org>
 
 Package: libnsl2
 Status: install ok installed
@@ -1993,6 +2451,88 @@ Description: Library for Public Suffix List (shared libraries)
 Homepage: https://github.com/rockdaboot/libpsl
 Original-Maintainer: Tim Rühsen <tim.ruehsen@gmx.de>
 
+Package: libpython3-stdlib
+Status: install ok installed
+Priority: optional
+Section: python
+Installed-Size: 39
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: python3-defaults
+Version: 3.10.6-1~22.04
+Depends: libpython3.10-stdlib (>= 3.10.6-1~)
+Description: interactive high-level object-oriented language (default python3 version)
+ This package contains the majority of the standard library for the Python
+ language (default python3 version).
+ .
+ This package is a dependency package, which depends on Debian's default
+ Python 3 version's standard library (currently v3.10).
+Original-Maintainer: Matthias Klose <doko@debian.org>
+Homepage: https://www.python.org/
+
+Package: libpython3.10-minimal
+Status: install ok installed
+Priority: optional
+Section: python
+Installed-Size: 5092
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: python3.10
+Version: 3.10.6-1~22.04
+Depends: libc6 (>= 2.14), libssl3 (>= 3.0.0~~alpha1)
+Recommends: libpython3.10-stdlib
+Conflicts: binfmt-support (<< 1.1.2)
+Conffiles:
+ /etc/python3.10/sitecustomize.py d6b276695157bde06a56ba1b2bc53670
+Description: Minimal subset of the Python language (version 3.10)
+ This package contains some essential modules. It is normally not
+ used on it's own, but as a dependency of python3.10-minimal.
+Original-Maintainer: Matthias Klose <doko@debian.org>
+
+Package: libpython3.10-stdlib
+Status: install ok installed
+Priority: optional
+Section: python
+Installed-Size: 8041
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: python3.10
+Version: 3.10.6-1~22.04
+Replaces: python3-gdbm (<< 3.9.9-1~)
+Depends: libpython3.10-minimal (= 3.10.6-1~22.04), media-types | mime-support, libbz2-1.0, libc6 (>= 2.34), libcrypt1 (>= 1:4.1.0), libdb5.3, libffi8 (>= 3.4), liblzma5 (>= 5.1.1alpha+20120614), libmpdec3, libncursesw6 (>= 6.1), libnsl2 (>= 1.0), libreadline8 (>= 7.0~beta), libsqlite3-0 (>= 3.14.0), libtinfo6 (>= 6), libtirpc3 (>= 1.0.2), libuuid1 (>= 2.20.1)
+Breaks: python3-gdbm (<< 3.9.9-1~)
+Description: Interactive high-level object-oriented language (standard library, version 3.10)
+ Python is a high-level, interactive, object-oriented language. Its 3.10 version
+ includes an extensive class library with lots of goodies for
+ network programming, system administration, sounds and graphics.
+ .
+ This package contains Python 3.10's standard library. It is normally not
+ used on its own, but as a dependency of python3.10.
+Original-Maintainer: Matthias Klose <doko@debian.org>
+
+Package: libreadline8
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 461
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: readline
+Version: 8.1.2-1
+Depends: readline-common, libc6 (>= 2.33), libtinfo6 (>= 6)
+Description: GNU readline and history libraries, run-time libraries
+ The GNU readline library aids in the consistency of user interface
+ across discrete programs that need to provide a command line
+ interface.
+ .
+ The GNU history library provides a consistent user interface for
+ recalling lines of previously typed input.
+Original-Maintainer: Matthias Klose <doko@debian.org>
+
 Package: librtmp1
 Status: install ok installed
 Priority: optional
@@ -2244,6 +2784,25 @@ Description: smart column output alignment library
  This smart column output alignment library is used by fdisk utilities.
 Homepage: https://www.kernel.org/pub/linux/utils/util-linux/
 Original-Maintainer: util-linux packagers <util-linux@packages.debian.org>
+
+Package: libsqlite3-0
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 1602
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: sqlite3
+Version: 3.37.2-2
+Depends: libc6 (>= 2.34)
+Breaks: python-migrate (<< 0.11.0-4~), python3-migrate (<< 0.11.0-4~)
+Description: SQLite 3 shared library
+ SQLite is a C library that implements an SQL database engine.
+ Programs that link with the SQLite library can have SQL database
+ access without running a separate RDBMS process.
+Original-Maintainer: Laszlo Boszormenyi (GCS) <gcs@debian.org>
+Homepage: https://www.sqlite.org/
 
 Package: libss2
 Status: install ok installed
@@ -2792,6 +3351,34 @@ Description: Linux Standard Base init script functionality
 Homepage: https://wiki.linuxfoundation.org/lsb/start
 Original-Maintainer: Debian sysvinit maintainers <debian-init-diversity@chiark.greenend.org.uk>
 
+Package: lsb-release
+Status: install ok installed
+Priority: optional
+Section: misc
+Installed-Size: 66
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: all
+Multi-Arch: foreign
+Source: lsb
+Version: 11.1.0ubuntu4
+Depends: python3:any, distro-info-data
+Recommends: apt
+Description: Linux Standard Base version reporting utility
+ The Linux Standard Base (http://www.linuxbase.org/) is a standard
+ core system that third-party applications written for Linux can
+ depend upon.
+ .
+ The lsb-release command is a simple tool to help identify the Linux
+ distribution being used and its compliance with the Linux Standard Base.
+ LSB conformance will not be reported unless the required metapackages are
+ installed.
+ .
+ While it is intended for use by LSB packages, this command may also
+ be useful for programmatically distinguishing between a pure Debian
+ installation and derived distributions.
+Homepage: https://wiki.linuxfoundation.org/lsb/start
+Original-Maintainer: Debian sysvinit maintainers <debian-init-diversity@chiark.greenend.org.uk>
+
 Package: mawk
 Status: install ok installed
 Priority: required
@@ -2818,6 +3405,31 @@ Description: Pattern scanning and text processing language
  limits such as NF = 32767 and sprintf buffer = 1020.
 Original-Maintainer: Boyuan Yang <byang@debian.org>
 Homepage: https://invisible-island.net/mawk/
+
+Package: media-types
+Status: install ok installed
+Priority: standard
+Section: net
+Installed-Size: 97
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: all
+Multi-Arch: foreign
+Version: 7.0.0
+Replaces: mime-support (<< 3.65)
+Breaks: mime-support (<< 3.65)
+Conffiles:
+ /etc/mime.types 2e5f0c27e65400ea230c8a94be277b86
+Description: List of standard media types and their usual file extension
+ This package installs the configuration file /etc/mime.types, that lists
+ standard media types (originally known as "MIME" types) and their usual file
+ extension.  This provides a simple way for programs to have a first guess at a
+ file's content.  On standard Debian desktop systems, one will also find more
+ sophisticated tools, for instance provided by the "file" and "xdg-utils"
+ packages.
+ .
+ The /etc/mime.types file is compiled by hand using mostly information provided
+ by the Internet Assigned Numbers Authority (IANA).
+Original-Maintainer: Mime-Support Packagers <team+debian-mimesupport-packagers@tracker.debian.org>
 
 Package: mount
 Status: install ok installed
@@ -3115,6 +3727,39 @@ Description: Core Perl modules
 Homepage: http://dev.perl.org/perl5/
 Original-Maintainer: Niko Tyni <ntyni@debian.org>
 
+Package: pinentry-curses
+Status: install ok installed
+Priority: optional
+Section: utils
+Installed-Size: 92
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: foreign
+Source: pinentry
+Version: 1.1.1-1build2
+Provides: pinentry
+Depends: libassuan0 (>= 2.1.0), libc6 (>= 2.34), libgpg-error0 (>= 1.16), libncursesw6 (>= 6), libtinfo6 (>= 6)
+Suggests: pinentry-doc
+Enhances: gnupg-agent
+Description: curses-based PIN or pass-phrase entry dialog for GnuPG
+ This package contains a program that allows for secure entry of PINs or
+ pass phrases.  That means it tries to take care that the entered
+ information is not swapped to disk or temporarily stored anywhere.
+ This functionality is particularly useful for entering pass phrases
+ when using encryption software such as GnuPG or e-mail clients using
+ the same.  It uses an open protocol and is therefore not tied to
+ particular software.
+ .
+ The program contained in this package implements a PIN entry dialog
+ using the curses tool kit, meaning that it is useful for users
+ working in text mode without the X Window System.  There are sibling
+ packages that implement PIN entry dialogs that use an X tool kit.  If
+ you install any of the graphical packages then this package is not
+ necessary because the sibling packages automatically fall back to
+ text mode if X is not active.
+Homepage: https://www.gnupg.org/related_software/pinentry/
+Original-Maintainer: Debian GnuPG Maintainers <pkg-gnupg-maint@lists.alioth.debian.org>
+
 Package: procps
 Status: install ok installed
 Priority: important
@@ -3169,6 +3814,116 @@ Description: accurate, machine-readable list of domain name suffixes
  collating spam, and other activities.
 Original-Maintainer: Daniel Kahn Gillmor <dkg@fifthhorseman.net>
 Homepage: https://publicsuffix.org
+
+Package: python3
+Status: install ok installed
+Priority: optional
+Section: python
+Installed-Size: 90
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: allowed
+Source: python3-defaults
+Version: 3.10.6-1~22.04
+Replaces: python3-minimal (<< 3.1.2-2)
+Provides: python3-profiler
+Depends: python3.10 (>= 3.10.6-1~), libpython3-stdlib (= 3.10.6-1~22.04)
+Pre-Depends: python3-minimal (= 3.10.6-1~22.04)
+Suggests: python3-doc (>= 3.10.6-1~22.04), python3-tk (>= 3.10.6-1~), python3-venv (>= 3.10.6-1~22.04)
+Description: interactive high-level object-oriented language (default python3 version)
+ Python, the high-level, interactive object oriented language,
+ includes an extensive class library with lots of goodies for
+ network programming, system administration, sounds and graphics.
+ .
+ This package is a dependency package, which depends on Debian's default
+ Python 3 version (currently v3.10).
+Original-Maintainer: Matthias Klose <doko@debian.org>
+Homepage: https://www.python.org/
+
+Package: python3-minimal
+Status: install ok installed
+Priority: optional
+Section: python
+Installed-Size: 122
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: allowed
+Source: python3-defaults
+Version: 3.10.6-1~22.04
+Depends: dpkg (>= 1.13.20)
+Pre-Depends: python3.10-minimal (>= 3.10.6-1~)
+Description: minimal subset of the Python language (default python3 version)
+ This package contains the interpreter and some essential modules.  It's used
+ in the boot process for some basic tasks.
+ See /usr/share/doc/python3.10-minimal/README.Debian for a list of the modules
+ contained in this package.
+Original-Maintainer: Matthias Klose <doko@debian.org>
+Homepage: https://www.python.org/
+Cnf-Visible-Pkgname: python3
+
+Package: python3.10
+Status: install ok installed
+Priority: optional
+Section: python
+Installed-Size: 620
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: allowed
+Version: 3.10.6-1~22.04
+Depends: python3.10-minimal (= 3.10.6-1~22.04), libpython3.10-stdlib (= 3.10.6-1~22.04), media-types | mime-support
+Suggests: python3.10-venv, python3.10-doc, binutils
+Breaks: python3-all (<< 3.6.5~rc1-1), python3-dev (<< 3.6.5~rc1-1), python3-venv (<< 3.6.5-2)
+Description: Interactive high-level object-oriented language (version 3.10)
+ Python is a high-level, interactive, object-oriented language. Its 3.10 version
+ includes an extensive class library with lots of goodies for
+ network programming, system administration, sounds and graphics.
+Original-Maintainer: Matthias Klose <doko@debian.org>
+
+Package: python3.10-minimal
+Status: install ok installed
+Priority: optional
+Section: python
+Installed-Size: 5906
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: allowed
+Source: python3.10
+Version: 3.10.6-1~22.04
+Depends: libpython3.10-minimal (= 3.10.6-1~22.04), libexpat1 (>= 2.1~beta3), zlib1g (>= 1:1.2.0)
+Pre-Depends: libc6 (>= 2.35)
+Recommends: python3.10
+Suggests: binfmt-support
+Conflicts: binfmt-support (<< 1.1.2)
+Description: Minimal subset of the Python language (version 3.10)
+ This package contains the interpreter and some essential modules.  It can
+ be used in the boot process for some basic tasks.
+ See /usr/share/doc/python3.10-minimal/README.Debian for a list of the modules
+ contained in this package.
+Original-Maintainer: Matthias Klose <doko@debian.org>
+Cnf-Visible-Pkgname: python3.10
+
+Package: readline-common
+Status: install ok installed
+Priority: optional
+Section: utils
+Installed-Size: 80
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: all
+Multi-Arch: foreign
+Source: readline
+Version: 8.1.2-1
+Replaces: libreadline-common, libreadline4 (<< 4.3-16), libreadline5 (<< 5.0-11)
+Depends: dpkg (>= 1.15.4) | install-info
+Suggests: readline-doc
+Conflicts: libreadline-common, libreadline5 (<< 5.0-11)
+Description: GNU readline and history libraries, common files
+ The GNU readline library aids in the consistency of user interface
+ across discrete programs that need to provide a command line
+ interface.
+ .
+ The GNU history library provides a consistent user interface for
+ recalling lines of previously typed input.
+Original-Maintainer: Matthias Klose <doko@debian.org>
 
 Package: sed
 Essential: yes
