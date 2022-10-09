@@ -19,3 +19,11 @@ update-alternatives 2022-08-15 11:52:54: run with --install /usr/sbin/rmt rmt /u
 update-alternatives 2022-08-15 11:52:54: auto-repair link group rmt
 update-alternatives 2022-08-15 11:52:58: run with --install /usr/bin/pager pager /bin/more 50 --slave /usr/share/man/man1/pager.1.gz pager.1.gz /usr/share/man/man1/more.1.gz
 update-alternatives 2022-08-15 11:52:58: auto-repair link group pager
+update-alternatives 2022-10-09 10:15:54: run with --quiet --install /usr/bin/pager pager /usr/bin/less 77 --slave /usr/share/man/man1/pager.1.gz pager.1.gz /usr/share/man/man1/less.1.gz
+update-alternatives 2022-10-09 10:15:54: link group pager updated to point to /usr/bin/less
+update-alternatives 2022-10-09 10:15:57: run with --install /usr/bin/rsh rsh /usr/bin/ssh 20 --slave /usr/share/man/man1/rsh.1.gz rsh.1.gz /usr/share/man/man1/ssh.1.gz
+update-alternatives 2022-10-09 10:15:57: link group rsh updated to point to /usr/bin/ssh
+update-alternatives 2022-10-09 10:15:57: run with --install /usr/bin/rlogin rlogin /usr/bin/slogin 20 --slave /usr/share/man/man1/rlogin.1.gz rlogin.1.gz /usr/share/man/man1/slogin.1.gz
+update-alternatives 2022-10-09 10:15:57: link group rlogin updated to point to /usr/bin/slogin
+update-alternatives 2022-10-09 10:15:57: run with --install /usr/bin/rcp rcp /usr/bin/scp 20 --slave /usr/share/man/man1/rcp.1.gz rcp.1.gz /usr/share/man/man1/scp.1.gz
+update-alternatives 2022-10-09 10:15:57: link group rcp updated to point to /usr/bin/scp

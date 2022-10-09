@@ -174,6 +174,29 @@ Description: basic utilities from 4.4BSD-Lite
 Homepage: https://www.kernel.org/pub/linux/utils/util-linux/
 Original-Maintainer: util-linux packagers <util-linux@packages.debian.org>
 
+Package: ca-certificates
+Status: install ok unpacked
+Priority: standard
+Section: misc
+Installed-Size: 375
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: all
+Multi-Arch: foreign
+Version: 20211016
+Depends: openssl (>= 1.1.1), debconf (>= 0.5) | debconf-2.0
+Breaks: ca-certificates-java (<< 20121112+nmu1)
+Enhances: openssl
+Description: Common CA certificates
+ Contains the certificate authorities shipped with Mozilla's browser to allow
+ SSL-based applications to check for the authenticity of SSL connections.
+ .
+ Please note that Debian can neither confirm nor deny whether the
+ certificate authorities whose certificates are included in this package
+ have in any way been audited for trustworthiness or RFC 3647 compliance.
+ Full responsibility to assess them belongs to the local system
+ administrator.
+Original-Maintainer: Julien Cristau <jcristau@debian.org>
+
 Package: coreutils
 Essential: yes
 Status: install ok installed
@@ -393,6 +416,64 @@ Description: GCC, the GNU Compiler Collection (base package)
 Homepage: http://gcc.gnu.org/
 Original-Maintainer: Debian GCC Maintainers <debian-gcc@lists.debian.org>
 
+Package: git
+Status: install ok unpacked
+Priority: optional
+Section: vcs
+Installed-Size: 18344
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: foreign
+Version: 1:2.34.1-1ubuntu1.4
+Provides: git-completion, git-core
+Depends: libc6 (>= 2.34), libcurl3-gnutls (>= 7.56.1), libexpat1 (>= 2.0.1), libpcre2-8-0 (>= 10.34), zlib1g (>= 1:1.2.0), perl, liberror-perl, git-man (>> 1:2.34.1), git-man (<< 1:2.34.1-.)
+Recommends: ca-certificates, patch, less, ssh-client
+Suggests: gettext-base, git-daemon-run | git-daemon-sysvinit, git-doc, git-email, git-gui, gitk, gitweb, git-cvs, git-mediawiki, git-svn
+Breaks: bash-completion (<< 1:1.90-1), cogito (<= 0.18.2+), dgit (<< 5.1~), git-buildpackage (<< 0.6.5), git-el (<< 1:2.32.0~rc2-1~), gitosis (<< 0.2+20090917-7), gitpkg (<< 0.15), guilt (<< 0.33), openssh-client (<< 1:6.8), stgit (<< 0.15), stgit-contrib (<< 0.15)
+Conffiles:
+ /etc/bash_completion.d/git-prompt newconffile
+Description: fast, scalable, distributed revision control system
+ Git is popular version control system designed to handle very large
+ projects with speed and efficiency; it is used for many high profile
+ open source projects, most notably the Linux kernel.
+ .
+ Git falls in the category of distributed source code management tools.
+ Every Git working directory is a full-fledged repository with full
+ revision tracking capabilities, not dependent on network access or a
+ central server.
+ .
+ This package provides the git main components with minimal dependencies.
+ Additional functionality, e.g. a graphical user interface and revision
+ tree visualizer, tools for interoperating with other VCS's, or a web
+ interface, is provided as separate git* packages.
+Homepage: https://git-scm.com/
+Original-Maintainer: Jonathan Nieder <jrnieder@gmail.com>
+
+Package: git-man
+Status: install ok unpacked
+Priority: optional
+Section: doc
+Installed-Size: 1957
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: all
+Multi-Arch: foreign
+Source: git
+Version: 1:2.34.1-1ubuntu1.4
+Description: fast, scalable, distributed revision control system (manual pages)
+ Git is popular version control system designed to handle very large
+ projects with speed and efficiency; it is used for many high profile
+ open source projects, most notably the Linux kernel.
+ .
+ Git falls in the category of distributed source code management tools.
+ Every Git working directory is a full-fledged repository with full
+ revision tracking capabilities, not dependent on network access or a
+ central server.
+ .
+ This package provides reference documentation for use by the 'man'
+ utility and the 'git help' command.
+Homepage: https://git-scm.com/
+Original-Maintainer: Jonathan Nieder <jrnieder@gmail.com>
+
 Package: gpgv
 Status: install ok installed
 Priority: important
@@ -512,6 +593,29 @@ Description: helper tools for all init systems
  specific to systemd at all. Maintainers of other init systems are welcome to
  include their helpers in this package.
 Original-Maintainer: Debian systemd Maintainers <pkg-systemd-maintainers@lists.alioth.debian.org>
+
+Package: less
+Status: install ok unpacked
+Priority: important
+Section: text
+Installed-Size: 321
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: foreign
+Version: 590-1build1
+Depends: libc6 (>= 2.34), libtinfo6 (>= 6)
+Description: pager program similar to more
+ This package provides "less", a file pager (that is, a memory-efficient
+ utility for displaying text one screenful at a time). Less has many
+ more features than the basic pager "more". As part of the GNU project,
+ it is widely regarded as the standard pager on UNIX-derived systems.
+ .
+ Also provided are "lessecho", a simple utility for ensuring arguments
+ with spaces are correctly quoted; "lesskey", a tool for modifying the
+ standard (vi-like) keybindings; and "lesspipe", a filter for specific
+ types of input, such as .doc or .txt.gz files.
+Homepage: http://www.greenwoodsoftware.com/less/
+Original-Maintainer: Milan Kupcevic <milan@debian.org>
 
 Package: libacl1
 Status: install ok installed
@@ -638,6 +742,49 @@ Description: block device ID library
  hard-coded device names and use a logical naming system instead.
 Homepage: https://www.kernel.org/pub/linux/utils/util-linux/
 Original-Maintainer: util-linux packagers <util-linux@packages.debian.org>
+
+Package: libbrotli1
+Status: install ok unpacked
+Priority: optional
+Section: libs
+Installed-Size: 784
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: brotli
+Version: 1.0.9-2build6
+Depends: libc6 (>= 2.29)
+Description: library implementing brotli encoder and decoder (shared libraries)
+ Brotli is a generic-purpose lossless compression algorithm
+ that compresses data using a combination of a modern variant
+ of the LZ77 algorithm, Huffman coding and 2nd order context modeling,
+ with a compression ratio comparable to the best currently available
+ general-purpose compression methods. It is similar in speed with
+ deflate but offers more dense compression.
+ .
+ This package installs shared libraries.
+Original-Maintainer: Tomasz Buchert <tomasz@debian.org>
+Homepage: https://github.com/google/brotli
+
+Package: libbsd0
+Status: install ok unpacked
+Priority: optional
+Section: libs
+Installed-Size: 136
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libbsd
+Version: 0.11.5-1
+Depends: libc6 (>= 2.33), libmd0 (>= 1.0.3-2)
+Description: utility functions from BSD systems - shared library
+ This library provides some C functions such as strlcpy() that are commonly
+ available on BSD systems but not on others like GNU systems.
+ .
+ For a detailed list of the provided functions, please see the libbsd-dev
+ package description.
+Original-Maintainer: Guillem Jover <guillem@debian.org>
+Homepage: https://libbsd.freedesktop.org/
 
 Package: libbz2-1.0
 Status: install ok installed
@@ -768,6 +915,36 @@ Description: POSIX 1003.1e capabilities (library)
 Homepage: https://sites.google.com/site/fullycapable/
 Original-Maintainer: Christian Kastner <ckk@debian.org>
 
+Package: libcbor0.8
+Status: install ok unpacked
+Priority: optional
+Section: libs
+Installed-Size: 83
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libcbor
+Version: 0.8.0-2ubuntu1
+Depends: libc6 (>= 2.14)
+Description: library for parsing and generating CBOR (RFC 7049)
+ CBOR is a general-purpose schema-less binary data format, defined in
+ RFC 7049. This package provides a C library for parsing and generating
+ CBOR. The main features are:
+ .
+  - Complete RFC conformance
+  - Robust C99 implementation
+  - Layered architecture offers both control and convenience
+  - Flexible memory management
+  - No shared global state - threading friendly
+  - Proper handling of UTF-8
+  - Full support for streams & incremental processing
+  - Extensive documentation and test suite
+  - No runtime dependencies, small footprint
+ .
+ This package contains the runtime library.
+Homepage: https://github.com/PJK/libcbor
+Original-Maintainer: Vincent Bernat <bernat@debian.org>
+
 Package: libcom-err2
 Status: install ok installed
 Priority: optional
@@ -812,6 +989,36 @@ Description: libcrypt shared library
 Original-Maintainer: Marco d'Itri <md@linux.it>
 Important: yes
 
+Package: libcurl3-gnutls
+Status: install ok unpacked
+Priority: optional
+Section: libs
+Installed-Size: 766
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: curl
+Version: 7.81.0-1ubuntu1.4
+Depends: libbrotli1 (>= 0.6.0), libc6 (>= 2.34), libgnutls30 (>= 3.7.2), libgssapi-krb5-2 (>= 1.17), libidn2-0 (>= 0.6), libldap-2.5-0 (>= 2.5.4), libnettle8, libnghttp2-14 (>= 1.12.0), libpsl5 (>= 0.16.0), librtmp1 (>= 2.4+20131018.git79459a2-3~), libssh-4 (>= 0.9.0), libzstd1 (>= 1.4.0), zlib1g (>= 1:1.1.4)
+Recommends: ca-certificates
+Description: easy-to-use client-side URL transfer library (GnuTLS flavour)
+ libcurl is an easy-to-use client-side URL transfer library, supporting DICT,
+ FILE, FTP, FTPS, GOPHER, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3, POP3S,
+ RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, TELNET and TFTP.
+ .
+ libcurl supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP
+ form based upload, proxies, cookies, user+password authentication (Basic,
+ Digest, NTLM, Negotiate, Kerberos), file transfer resume, http proxy tunneling
+ and more!
+ .
+ libcurl is free, thread-safe, IPv6 compatible, feature rich, well supported,
+ fast, thoroughly documented and is already used by many known, big and
+ successful companies and numerous applications.
+ .
+ SSL support is provided by GnuTLS.
+Homepage: https://curl.haxx.se
+Original-Maintainer: Alessandro Ghedini <ghedo@debian.org>
+
 Package: libdb5.3
 Status: install ok installed
 Priority: standard
@@ -847,6 +1054,75 @@ Description: Debian Configuration Management System (C-implementation library)
  .
  This library allows C programs to interface with cdebconf.
 Original-Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
+
+Package: libedit2
+Status: install ok unpacked
+Priority: optional
+Section: libs
+Installed-Size: 260
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libedit
+Version: 3.1-20210910-1build1
+Replaces: libedit-dev (<< 3.1-20180525-2~)
+Depends: libbsd0 (>= 0.1.3), libc6 (>= 2.33), libtinfo6 (>= 6)
+Description: BSD editline and history libraries
+ Command line editor library provides generic line editing,
+ history, and tokenization functions.
+ .
+ It slightly resembles GNU readline.
+Homepage: https://www.thrysoee.dk/editline/
+Original-Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+
+Package: liberror-perl
+Status: install ok unpacked
+Priority: optional
+Section: perl
+Installed-Size: 71
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: all
+Multi-Arch: foreign
+Version: 0.17029-1
+Depends: perl:any
+Description: Perl module for error/exception handling in an OO-ish way
+ The Error module provides two interfaces.  Firstly "Error" provides a
+ procedural interface to exception handling. Secondly "Error" is a base class
+ for errors/exceptions that can either be thrown, for subsequent catch, or can
+ simply be recorded.
+ .
+ Errors in the class "Error" should not be thrown directly, but the user
+ should throw errors from a sub-class of "Error".
+ .
+ Warning: Using the "Error" module is no longer recommended due to the
+ black-magical nature of its syntactic sugar, which often tends to break. Its
+ maintainers have stopped actively writing code that uses it, and discourage
+ people from doing so.
+ .
+ Recommended alternatives are Exception::Class (libexception-class-perl),
+ Error::Exception (not packaged), TryCatch (libtrycatch-perl), and Try::Tiny
+ (libtry-tiny-perl).
+Original-Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Homepage: https://metacpan.org/release/Error
+
+Package: libexpat1
+Status: install ok unpacked
+Priority: optional
+Section: libs
+Installed-Size: 432
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: expat
+Version: 2.4.7-1
+Depends: libc6 (>= 2.25)
+Description: XML parsing C library - runtime library
+ This package contains the runtime, shared library of expat, the C
+ library for parsing XML. Expat is a stream-oriented parser in
+ which an application registers handlers for things the parser
+ might find in the XML document (like start tags).
+Original-Maintainer: Laszlo Boszormenyi (GCS) <gcs@debian.org>
+Homepage: https://libexpat.github.io/
 
 Package: libext2fs2
 Status: install ok installed
@@ -895,6 +1171,26 @@ Description: Foreign Function Interface library runtime
 Original-Maintainer: Debian GCC Maintainers <debian-gcc@lists.debian.org>
 Homepage: https://sourceware.org/libffi/
 
+Package: libfido2-1
+Status: install ok unpacked
+Priority: optional
+Section: libs
+Installed-Size: 236
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libfido2
+Version: 1.10.0-1
+Depends: libc6 (>= 2.33), libcbor0.8 (>= 0.5.0), libssl3 (>= 3.0.0~~alpha1), libudev1 (>= 183), zlib1g (>= 1:1.2.0)
+Description: library for generating and verifying FIDO 2.0 objects
+ A library for communicating with a FIDO device over USB, and for verifying
+ attestation and assertion signatures. FIDO U2F (CTAP 1) and FIDO 2.0 (CTAP 2)
+ are supported.
+ .
+ This package contains the library.
+Original-Maintainer: Debian Authentication Maintainers <pkg-auth-maintainers@lists.alioth.debian.org>
+Homepage: https://developers.yubico.com/libfido2/
+
 Package: libgcc-s1
 Status: install ok installed
 Priority: optional
@@ -938,6 +1234,52 @@ Description: LGPL Crypto library - runtime library
  (Curve25519, sec256k1, GOST R 34.10-2001 and GOST R 34.10-2012, etc.)
 Homepage: https://directory.fsf.org/project/libgcrypt/
 Original-Maintainer: Debian GnuTLS Maintainers <pkg-gnutls-maint@lists.alioth.debian.org>
+
+Package: libgdbm-compat4
+Status: install ok unpacked
+Priority: optional
+Section: libs
+Installed-Size: 45
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: gdbm
+Version: 1.23-1
+Depends: libc6 (>= 2.33), libgdbm6 (>= 1.16)
+Description: GNU dbm database routines (legacy support runtime version) 
+ GNU dbm ('gdbm') is a library of database functions that use extendible
+ hashing and works similarly to the standard UNIX 'dbm' functions.
+ .
+ The basic use of 'gdbm' is to store key/data pairs in a data file, thus
+ providing a persistent version of the 'dictionary' Abstract Data Type
+ ('hash' to perl programmers).
+ This package includes library files, required to run old programs,
+ that use legacy 'dbm' interface. For new programs, please use modern
+ interface, provided by libgdbm6 and libgdbm-dev.
+Original-Maintainer: Nicolas Mora <babelouest@debian.org>
+Homepage: https://gnu.org/software/gdbm
+
+Package: libgdbm6
+Status: install ok unpacked
+Priority: optional
+Section: libs
+Installed-Size: 100
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: gdbm
+Version: 1.23-1
+Depends: libc6 (>= 2.33)
+Suggests: gdbm-l10n (= 1.23-1)
+Description: GNU dbm database routines (runtime version) 
+ GNU dbm ('gdbm') is a library of database functions that use extendible
+ hashing and works similarly to the standard UNIX 'dbm' functions.
+ .
+ The basic use of 'gdbm' is to store key/data pairs in a data file, thus
+ providing a persistent version of the 'dictionary' Abstract Data Type
+ ('hash' to perl programmers).
+Original-Maintainer: Nicolas Mora <babelouest@debian.org>
+Homepage: https://gnu.org/software/gdbm
 
 Package: libgmp10
 Status: install ok installed
@@ -1188,6 +1530,45 @@ Description: MIT Kerberos runtime libraries - Support library
 Original-Maintainer: Sam Hartman <hartmans@debian.org>
 Homepage: http://web.mit.edu/kerberos/
 
+Package: libldap-2.5-0
+Status: install ok unpacked
+Priority: optional
+Section: libs
+Installed-Size: 565
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: openldap
+Version: 2.5.13+dfsg-0ubuntu0.22.04.1
+Replaces: libldap-2.3-0, libldap2
+Depends: libc6 (>= 2.34), libgnutls30 (>= 3.7.2), libsasl2-2 (>= 2.1.27+dfsg2)
+Recommends: libldap-common
+Conflicts: ldap-utils (<= 2.1.23-1)
+Description: OpenLDAP libraries
+ These are the run-time libraries for the OpenLDAP (Lightweight Directory
+ Access Protocol) servers and clients.
+Homepage: https://www.openldap.org/
+Original-Maintainer: Debian OpenLDAP Maintainers <pkg-openldap-devel@lists.alioth.debian.org>
+
+Package: libldap-common
+Status: install ok unpacked
+Priority: optional
+Section: libs
+Installed-Size: 109
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: all
+Multi-Arch: foreign
+Source: openldap
+Version: 2.5.13+dfsg-0ubuntu0.22.04.1
+Replaces: libldap-2.4-2 (<< 2.4.44+dfsg-1)
+Conffiles:
+ /etc/ldap/ldap.conf newconffile
+Description: OpenLDAP common files for libraries
+ These are common files for the run-time libraries for the OpenLDAP
+ (Lightweight Directory Access Protocol) servers and clients.
+Homepage: https://www.openldap.org/
+Original-Maintainer: Debian OpenLDAP Maintainers <pkg-openldap-devel@lists.alioth.debian.org>
+
 Package: liblz4-1
 Status: install ok installed
 Priority: optional
@@ -1233,6 +1614,24 @@ Description: XZ-format compression library
  format, use the p7zip package instead.)
 Homepage: https://tukaani.org/xz/
 Original-Maintainer: Jonathan Nieder <jrnieder@gmail.com>
+
+Package: libmd0
+Status: install ok unpacked
+Priority: optional
+Section: libs
+Installed-Size: 71
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libmd
+Version: 1.0.4-1build1
+Depends: libc6 (>= 2.33)
+Description: message digest functions from BSD systems - shared library
+ The libmd library provides various message digest ("hash") functions,
+ as found on various BSDs on a library with the same name and with a
+ compatible API.
+Homepage: https://www.hadrons.org/software/libmd/
+Original-Maintainer: Guillem Jover <guillem@debian.org>
 
 Package: libmount1
 Status: install ok installed
@@ -1323,6 +1722,26 @@ Description: low level cryptographic library (symmetric and one-way cryptos)
  asymmetric cryptos reside in a separate library, libhogweed.
 Homepage: http://www.lysator.liu.se/~nisse/nettle/
 Original-Maintainer: Magnus Holmgren <holmgren@debian.org>
+
+Package: libnghttp2-14
+Status: install ok unpacked
+Priority: optional
+Section: libs
+Installed-Size: 203
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: nghttp2
+Version: 1.43.0-1build3
+Depends: libc6 (>= 2.14)
+Description: library implementing HTTP/2 protocol (shared library)
+ This is an implementation of the Hypertext Transfer Protocol version
+ 2 in C. The framing layer of HTTP/2 is implemented as a reusable C
+ library.
+ .
+ This package installs a shared library.
+Homepage: https://nghttp2.org/
+Original-Maintainer: Tomasz Buchert <tomasz@debian.org>
 
 Package: libnsl2
 Status: install ok installed
@@ -1506,6 +1925,30 @@ Description: Old Perl 5 Compatible Regular Expression Library - runtime files
  This package contains the runtime libraries.
 Original-Maintainer: Matthew Vernon <matthew@debian.org>
 
+Package: libperl5.34
+Status: install ok unpacked
+Priority: optional
+Section: libs
+Installed-Size: 28629
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: perl
+Version: 5.34.0-3ubuntu1
+Replaces: libarchive-tar-perl (<= 1.38-2), libcompress-raw-bzip2-perl (<< 2.101), libcompress-raw-zlib-perl (<< 2.101), libcompress-zlib-perl (<< 2.102), libdigest-md5-perl (<< 2.58), libdigest-sha-perl (<< 6.02), libencode-perl (<< 3.08), libio-compress-base-perl (<< 2.102), libio-compress-bzip2-perl (<< 2.102), libio-compress-perl (<< 2.102), libio-compress-zlib-perl (<< 2.102), libmime-base64-perl (<< 3.16), libmodule-corelist-perl (<< 2.14-2), libstorable-perl (<< 3.23), libsys-syslog-perl (<< 0.36), libthreads-perl (<< 2.26), libthreads-shared-perl (<< 1.62), libtime-hires-perl (<< 1.9767), libtime-piece-perl (<< 1.3401), perl (<< 5.22.0~), perl-base (<< 5.22.0~)
+Depends: libbz2-1.0, libc6 (>= 2.35), libcrypt1 (>= 1:4.1.0), libdb5.3, libgdbm-compat4 (>= 1.18-3), libgdbm6 (>= 1.18-3), zlib1g (>= 1:1.2.2.3), perl-modules-5.34 (>= 5.34.0-3ubuntu1)
+Suggests: sensible-utils
+Breaks: libcompress-raw-bzip2-perl (<< 2.101), libcompress-raw-zlib-perl (<< 2.101), libcompress-zlib-perl (<< 2.102), libdigest-md5-perl (<< 2.58), libdigest-sha-perl (<< 6.02), libencode-perl (<< 3.08), libfilter-perl (<< 1.60), libio-compress-base-perl (<< 2.102), libio-compress-bzip2-perl (<< 2.102), libio-compress-perl (<< 2.102), libio-compress-zlib-perl (<< 2.102), libmime-base64-perl (<< 3.16), libstorable-perl (<< 3.23), libsys-syslog-perl (<< 0.36), libthreads-perl (<< 2.26), libthreads-shared-perl (<< 1.62), libtime-hires-perl (<< 1.9767), libtime-piece-perl (<< 1.3401)
+Description: shared Perl library
+ This package contains the shared Perl library, used by applications
+ which embed a Perl interpreter.
+ .
+ It also contains the architecture-dependent parts of the standard
+ library (and depends on perl-modules-5.34 which contains the
+ architecture-independent parts).
+Homepage: http://dev.perl.org/perl5/
+Original-Maintainer: Niko Tyni <ntyni@debian.org>
+
 Package: libprocps8
 Status: install ok installed
 Priority: optional
@@ -1526,6 +1969,124 @@ Description: library for accessing process information from /proc
  compiled with libprocps.
 Homepage: https://gitlab.com/procps-ng/procps
 Original-Maintainer: Craig Small <csmall@debian.org>
+
+Package: libpsl5
+Status: install ok unpacked
+Priority: optional
+Section: libs
+Installed-Size: 95
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libpsl
+Version: 0.21.0-1.2build2
+Depends: libidn2-0 (>= 0.16), libc6 (>= 2.33), libunistring2 (>= 0.9.7)
+Recommends: publicsuffix (>= 20150507)
+Description: Library for Public Suffix List (shared libraries)
+ Libpsl allows checking domains against the Public Suffix List.
+ It can be used to avoid privacy-leaking 'super-cookies',
+ 'super domain' certificates, for domain highlighting purposes
+ sorting domain lists by site and more.
+ .
+ Please see https://publicsuffix.org for more detailed information.
+ .
+ This package contains runtime libraries.
+Homepage: https://github.com/rockdaboot/libpsl
+Original-Maintainer: Tim Rühsen <tim.ruehsen@gmx.de>
+
+Package: librtmp1
+Status: install ok unpacked
+Priority: optional
+Section: libs
+Installed-Size: 141
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: rtmpdump
+Version: 2.4+20151223.gitfa8646d.1-2build4
+Depends: libc6 (>= 2.14), libgmp10 (>= 2:6.2.1+dfsg), libgnutls30 (>= 3.7.2), libhogweed6, libnettle8, zlib1g (>= 1:1.1.4)
+Description: toolkit for RTMP streams (shared library)
+ A small dumper for media content streamed over the RTMP protocol (like BBC's
+ iPlayer high quality streams). Supplying an RTMP URL will result in a dumped
+ flv file, which can be played/transcoded with standard tools.
+ .
+ This package contains the shared libraries, header files needed by
+ programs that want to use librtmp.
+Homepage: http://rtmpdump.mplayerhq.hu/
+Original-Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+
+Package: libsasl2-2
+Status: install ok unpacked
+Priority: standard
+Section: libs
+Installed-Size: 170
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: cyrus-sasl2
+Version: 2.1.27+dfsg2-3ubuntu1
+Replaces: libsasl2
+Depends: libsasl2-modules-db (>= 2.1.27+dfsg2-3ubuntu1), libc6 (>= 2.34)
+Recommends: libsasl2-modules (>= 2.1.27+dfsg2-3ubuntu1)
+Breaks: postfix (<= 2.8.3-1), slapd (<= 2.4.25-3)
+Description: Cyrus SASL - authentication abstraction library
+ This is the Cyrus SASL API implementation, version 2.1.
+ .
+ SASL is the Simple Authentication and Security Layer, a method for
+ adding authentication support to connection-based protocols. To use
+ SASL, a protocol includes a command for identifying and
+ authenticating a user to a server and for optionally negotiating
+ protection of subsequent protocol interactions. If its use is
+ negotiated, a security layer is inserted between the protocol and the
+ connection. See RFC 2222 for more information.
+ .
+ Any of: ANONYMOUS, CRAM-MD5, DIGEST-MD5, GSSAPI (MIT or Heimdal
+ Kerberos 5), NTLM, OTP, PLAIN, or LOGIN can be used.
+Homepage: https://www.cyrusimap.org/sasl/
+Original-Maintainer: Debian Cyrus Team <team+cyrus@tracker.debian.org>
+
+Package: libsasl2-modules
+Status: install ok unpacked
+Priority: optional
+Section: libs
+Installed-Size: 267
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: cyrus-sasl2
+Version: 2.1.27+dfsg2-3ubuntu1
+Depends: libc6 (>= 2.14), libssl3 (>= 3.0.0~~alpha1)
+Suggests: libsasl2-modules-gssapi-mit | libsasl2-modules-gssapi-heimdal, libsasl2-modules-ldap, libsasl2-modules-otp, libsasl2-modules-sql
+Breaks: logcheck-database (<= 1.3.16~)
+Conffiles:
+ /etc/logcheck/ignore.d.server/libsasl2-modules newconffile
+Description: Cyrus SASL - pluggable authentication modules
+ This is the Cyrus SASL API implementation, version 2.1. See package
+ libsasl2-2 and RFC 2222 for more information.
+ .
+ This package provides the following SASL modules: LOGIN, PLAIN, ANONYMOUS,
+ NTLM, CRAM-MD5, and DIGEST-MD5 (with DES support).
+Homepage: https://www.cyrusimap.org/sasl/
+Original-Maintainer: Debian Cyrus Team <team+cyrus@tracker.debian.org>
+
+Package: libsasl2-modules-db
+Status: install ok unpacked
+Priority: standard
+Section: libs
+Installed-Size: 97
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: cyrus-sasl2
+Version: 2.1.27+dfsg2-3ubuntu1
+Depends: libc6 (>= 2.14), libdb5.3
+Description: Cyrus SASL - pluggable authentication modules (DB)
+ This is the Cyrus SASL API implementation, version 2.1. See package
+ libsasl2-2 and RFC 2222 for more information.
+ .
+ This package provides the DB plugin, which supports Berkeley DB lookups.
+Homepage: https://www.cyrusimap.org/sasl/
+Original-Maintainer: Debian Cyrus Team <team+cyrus@tracker.debian.org>
 
 Package: libseccomp2
 Status: install ok installed
@@ -1705,6 +2266,29 @@ Description: command-line interface parsing library
  It was originally inspired by the Multics SubSystem library.
 Homepage: http://e2fsprogs.sourceforge.net
 Original-Maintainer: Theodore Y. Ts'o <tytso@mit.edu>
+
+Package: libssh-4
+Status: install ok unpacked
+Priority: optional
+Section: libs
+Installed-Size: 486
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libssh
+Version: 0.9.6-2build1
+Depends: libc6 (>= 2.33), libgssapi-krb5-2 (>= 1.17), libssl3 (>= 3.0.0~~alpha1), zlib1g (>= 1:1.1.4)
+Breaks: remmina (<< 1.2.31.2+dfsg-1+), remmina-plugin-nx (<< 1.2.31.2+dfsg-1+), x2goclient (<< 4.1.2.1-1+)
+Description: tiny C SSH library (OpenSSL flavor)
+ The ssh library was designed to be used by programmers needing a working SSH
+ implementation by the mean of a library. The complete control of the client
+ is made by the programmer. With libssh, you can remotely execute programs,
+ transfer files, use a secure and transparent tunnel for your remote programs.
+ With its SFTP implementation, you can play with remote files easily.
+ .
+ This package contains shared libraries linked against OpenSSL.
+Homepage: https://www.libssh.org/
+Original-Maintainer: Laurent Bigonville <bigon@debian.org>
 
 Package: libssl3
 Status: install ok installed
@@ -1914,6 +2498,192 @@ Description: Universally Unique ID library
 Homepage: https://www.kernel.org/pub/linux/utils/util-linux/
 Original-Maintainer: util-linux packagers <util-linux@packages.debian.org>
 
+Package: libx11-6
+Status: install ok unpacked
+Priority: optional
+Section: libs
+Installed-Size: 1386
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libx11
+Version: 2:1.7.5-1
+Depends: libc6 (>= 2.34), libxcb1 (>= 1.11.1), libx11-data
+Breaks: libx11-xcb1 (<< 2:1.7.0-2)
+Description: X11 client-side library
+ This package provides a client interface to the X Window System, otherwise
+ known as 'Xlib'.  It provides a complete API for the basic functions of the
+ window system.
+ .
+ More information about X.Org can be found at:
+ <URL:https://www.X.org>
+ .
+ This module can be found at
+ https://gitlab.freedesktop.org/xorg/lib/libX11
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+
+Package: libx11-data
+Status: install ok unpacked
+Priority: optional
+Section: x11
+Installed-Size: 1429
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: all
+Multi-Arch: foreign
+Source: libx11
+Version: 2:1.7.5-1
+Breaks: libx11-6 (<< 2:1.4.1)
+Description: X11 client-side library
+ This package provides the locale data files for libx11.
+ .
+ More information about X.Org can be found at:
+ <URL:https://www.X.org>
+ .
+ This module can be found at
+ https://gitlab.freedesktop.org/xorg/lib/libX11
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+
+Package: libxau6
+Status: install ok unpacked
+Priority: optional
+Section: libs
+Installed-Size: 35
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libxau
+Version: 1:1.0.9-1build5
+Depends: libc6 (>= 2.33)
+Description: X11 authorisation library
+ This package provides the main interface to the X11 authorisation handling,
+ which controls authorisation for X connections, both client-side and
+ server-side.
+ .
+ More information about X.Org can be found at:
+ <URL:https://www.X.org>
+ .
+ This module can be found at
+ https://gitlab.freedesktop.org/xorg/lib/libxau
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+
+Package: libxcb1
+Status: install ok unpacked
+Priority: optional
+Section: libs
+Installed-Size: 206
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libxcb
+Version: 1.14-3ubuntu3
+Depends: libc6 (>= 2.14), libxau6 (>= 1:1.0.9), libxdmcp6
+Breaks: alsa-utils (<< 1.0.24.2-5)
+Description: X C Binding
+ This package contains the library files needed to run software using libxcb,
+ the X C Binding.
+ .
+ The XCB library provides an interface to the X Window System protocol,
+ designed to replace the Xlib interface.  XCB provides several advantages over
+ Xlib:
+ .
+  * Size: small library and lower memory footprint
+  * Latency hiding: batch several requests and wait for the replies later
+  * Direct protocol access: one-to-one mapping between interface and protocol
+  * Thread support: access XCB from multiple threads, with no explicit locking
+  * Easy creation of new extensions: automatically generates interface from
+    machine-parsable protocol descriptions
+Homepage: https://xcb.freedesktop.org
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+
+Package: libxdmcp6
+Status: install ok unpacked
+Priority: optional
+Section: libs
+Installed-Size: 43
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libxdmcp
+Version: 1:1.1.3-0ubuntu5
+Depends: libbsd0 (>= 0.2.0), libc6 (>= 2.4)
+Description: X11 Display Manager Control Protocol library
+ This package provides the main interface to the X11 display manager control
+ protocol library, which allows for remote logins to display managers.
+ .
+ More information about X.Org can be found at:
+ <URL:http://www.X.org>
+ .
+ This module can be found at
+ git://anongit.freedesktop.org/git/xorg/lib/libXdmcp
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+
+Package: libxext6
+Status: install ok unpacked
+Priority: optional
+Section: libs
+Installed-Size: 110
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libxext
+Version: 2:1.3.4-1build1
+Depends: libc6 (>= 2.14), libx11-6 (>= 2:1.6.0)
+Description: X11 miscellaneous extension library
+ libXext provides an X Window System client interface to several extensions to
+ the X protocol.
+ .
+ The supported protocol extensions are:
+  - DOUBLE-BUFFER (DBE), the Double Buffer extension;
+  - DPMS, the VESA Display Power Management System extension;
+  - Extended-Visual-Information (EVI), an extension for gathering extra
+    information about the X server's visuals;
+  - LBX, the Low Bandwidth X extension;
+  - MIT-SHM, the MIT X client/server shared memory extension;
+  - MIT-SUNDRY-NONSTANDARD, a miscellaneous extension by MIT;
+  - Multi-Buffering, the multi-buffering and stereo display extension;
+  - SECURITY, the X security extension;
+  - SHAPE, the non-rectangular shaped window extension;
+  - SYNC, the X synchronization extension;
+  - TOG-CUP, the Open Group's Colormap Utilization extension;
+  - XC-APPGROUP, the X Consortium's Application Group extension;
+  - XC-MISC, the X Consortium's resource ID querying extension;
+  - XTEST, the X test extension (this is one of two client-side
+    implementations; the other is in the libXtst library, provided by the
+    libxtst6 package);
+ .
+ libXext also provides a small set of utility functions to aid authors of
+ client APIs for X protocol extensions.
+ .
+ More information about X.Org can be found at:
+ <URL:http://www.X.org>
+ .
+ This module can be found at
+ git://anongit.freedesktop.org/git/xorg/lib/libXext
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+
+Package: libxmuu1
+Status: install ok unpacked
+Priority: optional
+Section: libs
+Installed-Size: 41
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libxmu
+Version: 2:1.1.3-3
+Depends: libc6 (>= 2.4), libx11-6
+Description: X11 miscellaneous micro-utility library
+ libXmuu provides a set of miscellaneous utility convenience functions for X
+ libraries to use.  It is a lighter version of libXmu that does not depend
+ on libXt or libXext; for more information on libXmu, see libxmu6.
+ .
+ More information about X.Org can be found at:
+ <URL:http://www.X.org>
+ .
+ This module can be found at
+ git://anongit.freedesktop.org/git/xorg/lib/libXmu
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+
 Package: libxxhash0
 Status: install ok installed
 Priority: optional
@@ -2115,6 +2885,103 @@ Description: terminal-related programs and man pages
 Original-Maintainer: Craig Small <csmall@debian.org>
 Homepage: https://invisible-island.net/ncurses/
 
+Package: netbase
+Status: install ok unpacked
+Priority: important
+Section: admin
+Installed-Size: 41
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: all
+Multi-Arch: foreign
+Version: 6.3
+Replaces: ebtables (<< 2.0.11-2)
+Breaks: ebtables (<< 2.0.11-2)
+Conffiles:
+ /etc/ethertypes newconffile
+ /etc/protocols newconffile
+ /etc/rpc newconffile
+ /etc/services newconffile
+Description: Basic TCP/IP networking system
+ This package provides the necessary infrastructure for basic TCP/IP based
+ networking.
+ .
+ In particular, it supplies common name-to-number mappings in /etc/services,
+ /etc/rpc, /etc/protocols and /etc/ethertypes.
+Original-Maintainer: Marco d'Itri <md@linux.it>
+
+Package: openssh-client
+Status: install ok unpacked
+Priority: standard
+Section: net
+Installed-Size: 3079
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: foreign
+Source: openssh
+Version: 1:8.9p1-3
+Replaces: openssh-sk-helper, ssh, ssh-krb5
+Provides: rsh-client, ssh-client
+Depends: adduser (>= 3.10), dpkg (>= 1.7.0), passwd, libc6 (>= 2.34), libedit2 (>= 2.11-20080614-0), libfido2-1 (>= 1.8.0), libgssapi-krb5-2 (>= 1.17), libselinux1 (>= 3.1~), libssl3 (>= 3.0.1), zlib1g (>= 1:1.1.4)
+Recommends: xauth
+Suggests: keychain, libpam-ssh, monkeysphere, ssh-askpass
+Breaks: openssh-sk-helper
+Conflicts: sftp
+Conffiles:
+ /etc/ssh/ssh_config newconffile
+Description: secure shell (SSH) client, for secure access to remote machines
+ This is the portable version of OpenSSH, a free implementation of
+ the Secure Shell protocol as specified by the IETF secsh working
+ group.
+ .
+ Ssh (Secure Shell) is a program for logging into a remote machine
+ and for executing commands on a remote machine.
+ It provides secure encrypted communications between two untrusted
+ hosts over an insecure network. X11 connections and arbitrary TCP/IP
+ ports can also be forwarded over the secure channel.
+ It can be used to provide applications with a secure communication
+ channel.
+ .
+ This package provides the ssh, scp and sftp clients, the ssh-agent
+ and ssh-add programs to make public key authentication more convenient,
+ and the ssh-keygen, ssh-keyscan, ssh-copy-id and ssh-argv0 utilities.
+ .
+ In some countries it may be illegal to use any encryption at all
+ without a special permit.
+ .
+ ssh replaces the insecure rsh, rcp and rlogin programs, which are
+ obsolete for most purposes.
+Original-Maintainer: Debian OpenSSH Maintainers <debian-ssh@lists.debian.org>
+Homepage: http://www.openssh.com/
+
+Package: openssl
+Status: install ok unpacked
+Priority: optional
+Section: utils
+Installed-Size: 2053
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: foreign
+Version: 3.0.2-0ubuntu1.6
+Depends: libc6 (>= 2.34), libssl3 (>= 3.0.2-0ubuntu1.2)
+Suggests: ca-certificates
+Conffiles:
+ /etc/ssl/openssl.cnf newconffile
+Description: Secure Sockets Layer toolkit - cryptographic utility
+ This package is part of the OpenSSL project's implementation of the SSL
+ and TLS cryptographic protocols for secure communication over the
+ Internet.
+ .
+ It contains the general-purpose command line binary /usr/bin/openssl,
+ useful for cryptographic operations such as:
+  * creating RSA, DH, and DSA key parameters;
+  * creating X.509 certificates, CSRs, and CRLs;
+  * calculating message digests;
+  * encrypting and decrypting with ciphers;
+  * testing SSL/TLS clients and servers;
+  * handling S/MIME signed or encrypted mail.
+Homepage: https://www.openssl.org/
+Original-Maintainer: Debian OpenSSL Team <pkg-openssl-devel@alioth-lists.debian.net>
+
 Package: passwd
 Status: install ok installed
 Priority: required
@@ -2142,6 +3009,59 @@ Description: change and administer password and group data
 Homepage: https://github.com/shadow-maint/shadow
 Original-Maintainer: Shadow package maintainers <pkg-shadow-devel@lists.alioth.debian.org>
 
+Package: patch
+Status: install ok unpacked
+Priority: optional
+Section: vcs
+Installed-Size: 229
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: foreign
+Version: 2.7.6-7build2
+Depends: libc6 (>= 2.34)
+Suggests: ed, diffutils-doc
+Description: Apply a diff file to an original
+ Patch will take a patch file containing any of the four forms
+ of difference listing produced by the diff program and apply
+ those differences to an original file, producing a patched
+ version.
+Homepage: https://savannah.gnu.org/projects/patch/
+Original-Maintainer: Laszlo Boszormenyi (GCS) <gcs@debian.org>
+
+Package: perl
+Status: install ok unpacked
+Priority: standard
+Section: perl
+Installed-Size: 717
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: allowed
+Version: 5.34.0-3ubuntu1
+Replaces: perl-base (<< 5.34.0-2), perl-modules (<< 5.22.0~)
+Provides: libansicolor-perl (= 5.01), libarchive-tar-perl (= 2.38), libattribute-handlers-perl (= 1.01), libautodie-perl (= 2.34), libcompress-raw-bzip2-perl (= 2.101), libcompress-raw-zlib-perl (= 2.101), libcompress-zlib-perl (= 2.102), libcpan-meta-perl (= 2.150010), libcpan-meta-requirements-perl (= 2.140), libcpan-meta-yaml-perl (= 0.018), libdigest-md5-perl (= 2.58), libdigest-perl (= 1.19), libdigest-sha-perl (= 6.02), libencode-perl (= 3.08), libexperimental-perl (= 0.024), libextutils-cbuilder-perl (= 0.280236), libextutils-command-perl (= 7.62), libextutils-install-perl (= 2.20), libextutils-parsexs-perl (= 3.430000), libfile-spec-perl (= 3.8000), libhttp-tiny-perl (= 0.076), libi18n-langtags-perl (= 0.45), libio-compress-base-perl (= 2.102), libio-compress-bzip2-perl (= 2.102), libio-compress-perl (= 2.102), libio-compress-zlib-perl (= 2.102), libio-zlib-perl (= 1.11), libjson-pp-perl (= 4.06000), liblocale-maketext-perl (= 1.29), liblocale-maketext-simple-perl (= 0.21.01), libmath-bigint-perl (= 1.999818), libmath-complex-perl (= 1.5902), libmime-base64-perl (= 3.16), libmodule-corelist-perl (= 5.20210520), libmodule-load-conditional-perl (= 0.74), libmodule-load-perl (= 0.36), libmodule-metadata-perl (= 1.000037), libnet-perl (= 1:3.13), libnet-ping-perl (= 2.74), libparams-check-perl (= 0.38), libparent-perl (= 0.238), libparse-cpan-meta-perl (= 2.150010), libperl-ostype-perl (= 1.010), libpod-escapes-perl (= 1.07), libpod-simple-perl (= 3.42), libstorable-perl (= 3.23), libsys-syslog-perl (= 0.36), libtest-harness-perl (= 3.43), libtest-simple-perl (= 1.302183), libtest-tester-perl (= 1.302183), libtest-use-ok-perl (= 1.302183), libthread-queue-perl (= 3.14), libthreads-perl (= 2.26), libthreads-shared-perl (= 1.62), libtime-hires-perl (= 1.9767), libtime-local-perl (= 1.3000), libtime-piece-perl (= 1.3401), libunicode-collate-perl (= 1.29), libversion-perl (= 1:0.9928), libversion-requirements-perl, podlators-perl (= 4.14)
+Depends: perl-base (= 5.34.0-3ubuntu1), perl-modules-5.34 (>= 5.34.0-3ubuntu1), libperl5.34 (= 5.34.0-3ubuntu1)
+Pre-Depends: dpkg (>= 1.17.17)
+Recommends: netbase
+Suggests: perl-doc, libterm-readline-gnu-perl | libterm-readline-perl-perl, make, libtap-harness-archive-perl
+Breaks: apt-show-versions (<< 0.22.10), libdist-inkt-perl (<< 0.024-5), libmarc-charset-perl (<< 1.35-3), libperl-dev (<< 5.24.0~), perl-doc (<< 5.34.0-1), perl-modules-5.22, perl-modules-5.24, perl-modules-5.26 (<< 5.26.2-5)
+Conflicts: libjson-pp-perl (<< 2.27200-2)
+Conffiles:
+ /etc/perl/Net/libnet.cfg newconffile
+Description: Larry Wall's Practical Extraction and Report Language
+ Perl is a highly capable, feature-rich programming language with over
+ 20 years of development. Perl 5 runs on over 100 platforms from
+ portables to mainframes. Perl is suitable for both rapid prototyping
+ and large scale development projects.
+ .
+ Perl 5 supports many programming styles, including procedural,
+ functional, and object-oriented. In addition to this, it is supported
+ by an ever-growing collection of reusable modules which accelerate
+ development. Some of these modules include Web frameworks, database
+ integration, networking protocols, and encryption. Perl provides
+ interfaces to C and C++ for custom extension development.
+Homepage: http://dev.perl.org/perl5/
+Original-Maintainer: Niko Tyni <ntyni@debian.org>
+
 Package: perl-base
 Essential: yes
 Status: install ok installed
@@ -2165,6 +3085,34 @@ Description: minimal Perl system
  standard run-time library required to perform basic tasks. For a full
  Perl installation, install "perl" (and its dependencies, "perl-modules-5.34"
  and "perl-doc").
+Homepage: http://dev.perl.org/perl5/
+Original-Maintainer: Niko Tyni <ntyni@debian.org>
+
+Package: perl-modules-5.34
+Status: install ok unpacked
+Priority: standard
+Section: libs
+Installed-Size: 17668
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: all
+Multi-Arch: foreign
+Source: perl
+Version: 5.34.0-3ubuntu1
+Replaces: libansicolor-perl (<< 5.01), libarchive-tar-perl (<< 2.38), libattribute-handlers-perl (<< 1.01), libautodie-perl (<< 2.34), libcpan-meta-perl (<< 2.150010), libcpan-meta-requirements-perl (<< 2.140), libcpan-meta-yaml-perl (<< 0.018), libdigest-perl (<< 1.19), libexperimental-perl (<< 0.024), libextutils-cbuilder-perl (<< 0.280236), libextutils-command-perl (<< 7.62), libextutils-install-perl (<< 2.20), libextutils-parsexs-perl (<< 3.430000), libfile-spec-perl (<< 3.8000), libhttp-tiny-perl (<< 0.076), libi18n-langtags-perl (<< 0.45), libio-zlib-perl (<< 1.11), libjson-pp-perl (<< 4.06000), liblocale-maketext-perl (<< 1.29), liblocale-maketext-simple-perl (<< 0.21.01), libmath-bigint-perl (<< 1.999818), libmath-complex-perl (<< 1.5902), libmodule-corelist-perl (<< 5.20210520), libmodule-load-conditional-perl (<< 0.74), libmodule-load-perl (<< 0.36), libmodule-metadata-perl (<< 1.000037), libnet-perl (<< 1:3.13), libnet-ping-perl (<< 2.74), libparams-check-perl (<< 0.38), libparent-perl (<< 0.238), libparse-cpan-meta-perl (<< 2.150010), libperl-ostype-perl (<< 1.010), libpod-escapes-perl (<< 1.07), libpod-simple-perl (<< 3.42), libtest-harness-perl (<< 3.43), libtest-simple-perl (<< 1.302183), libtest-tester-perl (<< 1.302183), libtest-use-ok-perl (<< 1.302183), libthread-queue-perl (<< 3.14), libtime-local-perl (<< 1.3000), libunicode-collate-perl (<< 1.29), libversion-perl (<< 1:0.9928), perl-base (<< 5.22.0~), perl-modules, podlators-perl (<< 4.14)
+Provides: perl-modules
+Depends: perl-base (>= 5.34.0-1)
+Pre-Depends: dpkg (>= 1.17.17)
+Recommends: perl (>= 5.34.0-1)
+Breaks: libansicolor-perl (<< 5.01), libarchive-tar-perl (<< 2.38), libattribute-handlers-perl (<< 1.01), libautodie-perl (<< 2.34), libcpan-meta-perl (<< 2.150010), libcpan-meta-requirements-perl (<< 2.140), libcpan-meta-yaml-perl (<< 0.018), libdigest-perl (<< 1.19), libexperimental-perl (<< 0.024), libextutils-cbuilder-perl (<< 0.280236), libextutils-command-perl (<< 7.62), libextutils-install-perl (<< 2.20), libextutils-parsexs-perl (<< 3.430000), libfile-spec-perl (<< 3.8000), libhttp-tiny-perl (<< 0.076), libi18n-langtags-perl (<< 0.45), libio-zlib-perl (<< 1.11), libjson-pp-perl (<< 4.06000), liblocale-maketext-perl (<< 1.29), liblocale-maketext-simple-perl (<< 0.21.01), libmath-bigint-perl (<< 1.999818), libmath-complex-perl (<< 1.5902), libmodule-corelist-perl (<< 5.20210520), libmodule-load-conditional-perl (<< 0.74), libmodule-load-perl (<< 0.36), libmodule-metadata-perl (<< 1.000037), libnet-perl (<< 1:3.13), libnet-ping-perl (<< 2.74), libparams-check-perl (<< 0.38), libparent-perl (<< 0.238), libparse-cpan-meta-perl (<< 2.150010), libperl-ostype-perl (<< 1.010), libpod-escapes-perl (<< 1.07), libpod-simple-perl (<< 3.42), libtest-harness-perl (<< 3.43), libtest-simple-perl (<< 1.302183), libtest-tester-perl (<< 1.302183), libtest-use-ok-perl (<< 1.302183), libthread-queue-perl (<< 3.14), libtime-local-perl (<< 1.3000), libunicode-collate-perl (<< 1.29), libversion-perl (<< 1:0.9928), maildirsync (<< 1.2-2.1), perl (<< 5.34.0~), podlators-perl (<< 4.14)
+Conflicts: perl-modules (<< 5.22.0~)
+Description: Core Perl modules
+ Architecture independent Perl modules.  These modules are part of Perl and
+ required if the `perl' package is installed.
+ .
+ Note that this package only exists to save archive space and should be
+ considered an internal implementation detail of the `perl' package.
+ Other packages should not depend on `perl-modules-5.34' directly, they
+ should use `perl' (which depends on `perl-modules-5.34') instead.
 Homepage: http://dev.perl.org/perl5/
 Original-Maintainer: Niko Tyni <ntyni@debian.org>
 
@@ -2203,6 +3151,25 @@ Description: /proc file system utilities
  snice, sysctl, tload, top, uptime, vmstat, w, and watch.
 Homepage: https://gitlab.com/procps-ng/procps
 Original-Maintainer: Craig Small <csmall@debian.org>
+
+Package: publicsuffix
+Status: install ok unpacked
+Priority: optional
+Section: net
+Installed-Size: 330
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: all
+Multi-Arch: foreign
+Version: 20211207.1025-1
+Provides: publicsuffix-dafsa
+Description: accurate, machine-readable list of domain name suffixes
+ A machine-readable list of domain name suffixes that accept public
+ registration.  Each suffix represents the part of a domain name which
+ is not under the control of the individual registrant, which makes
+ the list useful for grouping cookies, deciding same-origin policies,
+ collating spam, and other activities.
+Original-Maintainer: Daniel Kahn Gillmor <dkg@fifthhorseman.net>
+Homepage: https://publicsuffix.org
 
 Package: sed
 Essential: yes
@@ -2352,6 +3319,22 @@ Description: miscellaneous system utilities
  interface with real time clock, etc.
 Homepage: https://www.kernel.org/pub/linux/utils/util-linux/
 Original-Maintainer: util-linux packagers <util-linux@packages.debian.org>
+
+Package: xauth
+Status: install ok unpacked
+Priority: optional
+Section: x11
+Installed-Size: 77
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: foreign
+Version: 1:1.1-1build2
+Depends: libc6 (>= 2.34), libx11-6, libxau6 (>= 1:1.0.9), libxext6, libxmuu1 (>= 2:1.1.3)
+Description: X authentication utility
+ xauth is a small utility to read and manipulate Xauthority files, which
+ are used by servers and clients alike to control authentication and access
+ to X sessions.
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
 
 Package: zlib1g
 Status: install ok installed
