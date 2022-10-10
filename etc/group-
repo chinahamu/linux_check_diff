@@ -38,3 +38,8 @@ games:x:60:
 users:x:100:
 nogroup:x:65534:
 _ssh:x:101:
+nginx:x:102:
+systemd-journal:x:103:
+systemd-network:x:104:
+systemd-resolve:x:105:
+messagebus:x:106:

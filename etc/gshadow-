@@ -38,3 +38,8 @@ games:*::
 users:*::
 nogroup:*::
 _ssh:!::
+nginx:!::
+systemd-journal:!::
+systemd-network:!::
+systemd-resolve:!::
+messagebus:!::
