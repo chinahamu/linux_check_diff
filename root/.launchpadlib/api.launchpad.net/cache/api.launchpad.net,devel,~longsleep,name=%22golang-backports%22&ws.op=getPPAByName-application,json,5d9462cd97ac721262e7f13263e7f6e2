@@ -1,0 +1,22 @@
+status: 200
+date: Mon, 10 Oct 2022 08:08:48 GMT
+server: gunicorn/19.8.1
+x-powered-by: Zope (www.zope.org), Python (www.python.org)
+content-security-policy: frame-ancestors 'self';
+content-type: application/json
+strict-transport-security: max-age=15552000
+vary: Accept,Accept-Encoding
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+x-launchpad-revision: 762fb15a975e8b23af6a1f86e44e46bfd0451459
+x-lazr-notifications: []
+x-xss-protection: 1; mode=block
+x-vcs-revision: 762fb15a975e8b23af6a1f86e44e46bfd0451459
+x-request-id: b98e78e5-4aef-4333-96d8-af44a921c552
+content-length: 1479
+-content-encoding: gzip
+content-location: https://api.launchpad.net/devel/~longsleep?name=%22golang-backports%22&ws.op=getPPAByName
+-varied-accept: application/json
+-varied-accept-encoding: gzip, deflate
+
+{"self_link": "https://api.launchpad.net/devel/~longsleep/+archive/ubuntu/golang-backports", "web_link": "https://launchpad.net/~longsleep/+archive/ubuntu/golang-backports", "resource_type_link": "https://api.launchpad.net/devel/#archive", "owner_link": "https://api.launchpad.net/devel/~longsleep", "name": "golang-backports", "displayname": "Golang Backports", "reference": "~longsleep/ubuntu/golang-backports", "distribution_link": "https://api.launchpad.net/devel/ubuntu", "private": false, "suppress_subscription_notifications": false, "dependencies_collection_link": "https://api.launchpad.net/devel/~longsleep/+archive/ubuntu/golang-backports/dependencies", "description": "Golang 1.8, 1.9, 1.10, 1.11, 1.12, 1.13, 1.14, 1.15, 1.16, 1.17, 1.18 and 1.19 PPA for Ubuntu", "signing_key_fingerprint": "52B59B1571A79DBC054901C0F6BC817356A3D45E", "require_virtualized": true, "build_debug_symbols": false, "publish_debug_symbols": false, "permit_obsolete_series_uploads": false, "authorized_size": 4096, "status": "Active", "external_dependencies": null, "processors_collection_link": "https://api.launchpad.net/devel/~longsleep/+archive/ubuntu/golang-backports/processors", "enabled_restricted_processors_collection_link": "https://api.launchpad.net/devel/~longsleep/+archive/ubuntu/golang-backports/enabled_restricted_processors", "publish": true, "relative_build_score": 0, "http_etag": "\"e2d890f433f341961c05e1b1b710482b97f42e6f-fb7863230eab7d33d22df0713837b214f6b1f226\""}

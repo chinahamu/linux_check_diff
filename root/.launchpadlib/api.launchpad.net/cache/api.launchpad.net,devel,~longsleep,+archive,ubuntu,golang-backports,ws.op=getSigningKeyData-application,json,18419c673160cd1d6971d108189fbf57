@@ -1,0 +1,22 @@
+status: 200
+date: Mon, 10 Oct 2022 08:08:51 GMT
+server: gunicorn/19.8.1
+x-powered-by: Zope (www.zope.org), Python (www.python.org)
+content-security-policy: frame-ancestors 'self';
+content-type: application/json
+strict-transport-security: max-age=15552000
+vary: Accept,Accept-Encoding
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+x-launchpad-revision: 762fb15a975e8b23af6a1f86e44e46bfd0451459
+x-lazr-notifications: []
+x-xss-protection: 1; mode=block
+x-vcs-revision: 762fb15a975e8b23af6a1f86e44e46bfd0451459
+x-request-id: 402c4ef6-6d81-4ce5-bc8c-3a21b18c7238
+content-length: 608
+-content-encoding: gzip
+content-location: https://api.launchpad.net/devel/~longsleep/+archive/ubuntu/golang-backports?ws.op=getSigningKeyData
+-varied-accept: application/json
+-varied-accept-encoding: gzip, deflate
+
+"-----BEGIN PGP PUBLIC KEY BLOCK-----\nVersion: GnuPG v2\n\nmI0ET551kQEEAME7Iyb7+c79CVWVwe+QaNlAVgauke1Q9Ycw8Rdxj55lKBJ5Ilpp\nLwiKreAVin4CCaGEtT9btePbYYKg8I+/dsiDbE9+o8e8FIMEBwy+FS+9bwLZ5WZP\n6nEtKPrrk3E+RUUpNbmO6udA62E0q2w7NcoA1jRS2YucsIL39aFXJcmvABEBAAG0\nIUxhdW5jaHBhZCBQUEEgZm9yIFNpbW9uIEVpc2VubWFuboi4BBMBAgAiBQJPnnWR\nAhsDBgsJCAcDAgYVCAIJCgsEFgIDAQIeAQIXgAAKCRD2vIFzVqPUXle6BAC3FUrE\n7j4ltlgGAT2vRNlqWe8W6v0v20e1M8GsFHNB24zL/iRitUMosaWX94ufExwm+83y\nka4Cq0J4oUCSJtgWDLb6K2hYMKLnofj889+4ZN0akNyMOg0O5usD0oJJuRXL0+e3\nsZo8b2aj7MwrHe+rTLLnlyKlRTUpt1gGF5GuiA==\n=S8ek\n-----END PGP PUBLIC KEY BLOCK-----\n"
